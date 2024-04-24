@@ -1,1 +1,1 @@
-AP Yaml/config for multi game
+Multi game Yaml/config for https://archipelago.gg
