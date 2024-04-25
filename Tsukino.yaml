@@ -1,4 +1,4 @@
-﻿#    ⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#    ⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 # ⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀
 # ⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
 # ⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⡇⠀⠀⠀⠀
@@ -23,7 +23,7 @@ game: #Game gacha
   # tl;dr weight/total weight
   
   #Latest tested/updated version
-  Pseudoregalia: 0 #0.4.6
+  Pseudoregalia: 1 #0.4.6
   Pokemon Emerald: 1 #0.4.6
   
 requires: #Version of Archipelago required for this yaml to work as expected.
@@ -151,6 +151,29 @@ Pseudoregalia: #Lunatic/hard settings
   plando_items:
     #Item plando allows a player to place an item in a specific location or specific locations,
     #or place multiple items into a list of specific locations both in their own game or in another player's game.
+    #
+    # Single Placement is when you use a plando block to place a single item at a single location.
+    # "item" is the item you would like to place and location is the location to place it.
+    # 
+    # example:
+    # - item:
+    # Progressive Slide: 1  
+    # location: early_locations
+    # from_pool: true
+    # world: true
+    # percentage: 20
+    #
+    # Multi Placement uses a plando block to place multiple items in multiple locations until either list is exhausted.
+    # "items" defines the items to use, each with a number for the amount. Using true instead of a number uses however many of that item are in your item pool.
+    #
+    # example:
+    # - items:
+    # Boss Relic: 3
+    # locations:
+    # - Boss Relic 1
+    # - Boss Relic 2
+    # - Boss Relic 3
+    #
     - item:
       #https://archipelago.gg/datapackage, item/location list for supported games
       #Case sensitive item name: amount
@@ -181,7 +204,23 @@ Pseudoregalia: #Lunatic/hard settings
       location: early_locations
       from_pool: true
       world: true
-      percentage: 20
+      percentage: 33
+      
+    - items:
+      Health Piece: 16
+      location: non_early_locations
+      from_pool: true
+      world: true
+      percentage: 66
+      # "count:" can be used to set the maximum number of items placed from the block. The default is 1 if using item and False if using items
+      # If a number is used, it will try to place this number of items.
+      # If set to false, it will try to place as many items from the block as it can.
+      # If min and max are defined, it will try to place a number of items between these two numbers at random.
+      #Example:
+      count:
+        min: 1
+        max: 16
+      
    
 Pokemon Emerald: #Champion 3x exp casual ish settings
   # https://archipelago.gg/tutorial/Pokemon%20Emerald/setup/en
