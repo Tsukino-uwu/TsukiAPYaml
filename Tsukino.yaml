@@ -15,13 +15,37 @@ description: Default Tsukino Template, with lot of comments explaining how weigh
 # these are simply some convenient on/off toggles for them
 # true=on,false=off
 randomize_game_selection: false # game gacha, if false picks games from "game:" instead
+
 supported_games_only: false # if false, picks all unsupported & supported games
  #This will force randomized game selection to be true
+
+async: false # if true, this will only change game settings, not pick specific async games
+ # Otherwise known as "long seed", usually just more tasks/bosses and total checks
+ 
 per_game_name: true # if false, defaults to standard player/slot name Tsukino
-#async: false
 
 
 game: # This is only used if games selection is not randomized
+    #
+   # Weight Guide
+    #
+    # Few examples:
+    # if you weight games LTTP:20/Terraria:10/PokemonRB:20, for instance,
+    # there will be 40% chance of LTTP, 20% chance of Terraria and 40% chance of pokemon.
+    # LTTP = 20/(20+10+20) = 20/50 = 40%
+    # Terraria = 10/(20+10+20) = 10/50 = 20%
+    # Pokemon = 20/(20+10+20) = 20/50 = 40%
+    # # Several weights can be used for like this
+    # if you want to randomize a bit between which option gets picked
+    # if you change pokemon's weight to 15, then the spread becomes 44.4%, 22.2% and 33.3%
+    # weights are summed, and each unit of chance is 1/(weight sum)
+    # 33 + 33 + 33 + 33 = 132, 33/132 = 0.25 = 1 in 4 chance
+    # there's no need to worry about total weight being exactly 100 or more/less
+    # weights of 1, 1, and 1 are the same as weights of 33, 33 and 33
+    # tl;dr weight/total weight
+    #
+    # any value at 1 or above can be used to enable something, 0=off/disabled
+    
   # Latest tested/updated version
    Pseudoregalia: 1 # 0.4.6
    Pokemon Emerald: 0 # 0.4.6
@@ -72,31 +96,13 @@ Pseudoregalia: #Lunatic/hard settings
     # Maximum value is 99
     # tl;dr low=hard, high=easy
     #
-    #
-    # Weight Guide
-    #
-    # Few examples:
-    # if you weight games LTTP:20/Terraria:10/PokemonRB:20, for instance,
-    # there will be 40% chance of LTTP, 20% chance of Terraria and 40% chance of pokemon.
-    # LTTP = 20/(20+10+20) = 20/50 = 40%
-    # Terraria = 10/(20+10+20) = 10/50 = 20%
-    # Pokemon = 20/(20+10+20) = 20/50 = 40%
-    # # Several weights can be used for like this
-    # if you want to randomize a bit between which option gets picked
-    # if you change pokemon's weight to 15, then the spread becomes 44.4%, 22.2% and 33.3%
-    # weights are summed, and each unit of chance is 1/(weight sum)
-    # 33 + 33 + 33 + 33 = 132, 33/132 = 0.25 = 1 in 4 chance
-    # there's no need to worry about total weight being exactly 100 or more/less
-    # weights of 1, 1, and 1 are the same as weights of 33, 33 and 33
-    # tl;dr weight/total weight
-    #
-    # Weights can also be used for a couple other settings/options in yaml's
+    # Weights:
+    # can also be used for a couple other settings/options in yaml's
     # to further randomize things instead of just having something 
     # set specifically to true, false or random
     # basically randomize a bit between which option/s can get picked
     #
-    # any value at 1 or above can be used to enable something, 0=off/disabled
-    # 50 is just the commonly used default value for enable/true/on/yes etc when picking 1 choice
+    # 50 is the commonly used default value for enable/true etc even if anything 1+ works
     random: 0
     random-low: 0
     random-high: 0
@@ -401,7 +407,7 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     - Dewford Gym - Knuckle Badge
     - Dewford Gym - TM08 from Brawly
     - Mauville Gym - Dynamo Badge
-    - Mauville City - TM24 from Wattson
+    - Mauville Gym - TM34 from Wattson
     - Lavaridge Gym - Heat Badge
     - Lavaridge Gym - TM50 from Flannery
 
@@ -1152,7 +1158,97 @@ triggers:
           # weight can be used to randomize what games get picked
           Pokemon Emerald: 1 
           
+    # async: starts here @@@@@@@@@@@@@@@@@  
+    #    
+    # Game defaults should be for SYNC. Triggers will set ASYNC options.    
+  - option_name: async
+    option_result: true
+    options:
+        null:
+          # this will overwrite/ignore the default/sync settings in this yaml, and only use these specific ones
+          # anything left blank/unchanged will use the default template default values
+          Pokemon Emerald: 
+              wild_pokemon:
+                completely_random: 50
+                  #Vanilla wild pokemon locations give an error when dexsanity is used
+              dexsanity: true
+              trainersanity: true
+              goal: steven
+              start_inventory:
+                Max Repel: 99 # 1stack for convenience
+              bikes:
+                true: 50
+              rods:
+                true: 50
+              hidden_items: # No clue where all of these are even with item finder, but its a lot of checks
+                true: 50
+              npc_gifts:
+                true: 50
+              berry_trees:
+                true: 50
+              starters:
+                completely_random: 50
+              trainer_parties:
+                completely_random: 50
+              force_fully_evolved:
+                random-range-40-60: 50
+              legendary_encounters:
+                completely_random: 50
+              misc_pokemon:
+                completely_random: 50
+              abilities:
+                follow_evolutions: 50
+              ability_blacklist: ["Wonder Guard", "Arena Trap", "Shadow Tag", "Magnet Pull", "Truant", "Cacophony",]
+              move_blacklist: ["Minimize", "Double Team", "Protect", "Substitute", "Detect", "Sand-Attack", "Smokescreen",]
+              level_up_moves:
+                start_with_four_moves: 50
+              tm_tutor_compatibility:
+                100: 50
+              hm_compatibility:
+                100: 50
+              reusable_tms_tutors:
+                true: 50
+              guaranteed_catch:
+                true: 50
+              normalize_encounter_rates:
+                true: 50
+              exp_modifier:
+                300: 50
+              blind_trainers:
+                true: 50
+              better_shops:
+                true: 50
+              extra_boulders:
+                true: 50
+              extra_bumpy_slope:
+                true: 50
+              modify_118:
+                true: 50
+              turbo_a:
+                true: 50
+              receive_item_messages:
+                progression: 50
+              remote_items:
+                true: 50
+              exclude_locations: ["Pokedex - Shedinja",] #just in case
+
+          # Manual_Hatsune_Miku:
+              # song_total: random-range-80-100
+          # MegaMan Battle Network 3:
+              # include_jobs: true
+              # trade_quest_hinting: none
+          # Pokemon Red and Blue:
+              # rival_name: FINSHNG
+          # Super Mario World:
+              # hidden_1up_checks: true
+              # bonus_block_checks: true
+              # blocksanity: true
+              # bosses_required: random-range-7-11    
+            
     # per_game_name: starts here @@@@@@@@@@@@@@@@@
+    #
+    # has to trigger at the bottom/last,
+    # so it won't get the name to early / game changes after name is picked and becomes incorrect etc
   - option_name: game
     # per_game_name
     # Picks a player/slot name depending on what game "game:" decides
@@ -1188,6 +1284,9 @@ triggers:
           # make a trigger affect what optiosn get picked somewhere else but not those options weight ?
           # For triggers "If you would like the same thing to occur with multiple results, you would need multiple triggers for this."
           # is it possible to grab previous results from other triggers instead of forcing true/false ? think triggers kinda overwrite each other right ?
+
+
+
 
    
 #WIP/extra section, not being worked on atm
