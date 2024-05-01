@@ -1,6 +1,6 @@
 ### Multi game Yaml/config for https://archipelago.gg
 
-# Don't forget to enable plando "items" in your host.yaml file
+# Don't forget to enable plando "items" in host.yaml
 ## [Enabling Plando](https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando)
 
 
