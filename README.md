@@ -1,4 +1,5 @@
-### Multi game Yaml/config for https://archipelago.gg
+# Yaml version 0.4.6 
+### Multi game Yaml/config for https://archipelago.gg / [archipelago github](https://github.com/ArchipelagoMW/Archipelago)
 
 # Don't forget to enable plando "items" in host.yaml
 ## [Enabling Plando](https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando)
