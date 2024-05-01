@@ -1,4 +1,4 @@
-# Last updated for: version 0.4.6 , 2024-05-01
+### Last updated for: version 0.4.6 , 2024-05-01
 ### Multi game Yaml/config for https://archipelago.gg / [archipelago github](https://github.com/ArchipelagoMW/Archipelago)
 
 # Don't forget to enable plando "items" in host.yaml
