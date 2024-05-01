@@ -10,6 +10,9 @@
 randomize_game_selection:
  - For randomizing what game gets selected
 
+after_dark "WIP not added´"
+ - Always random games if enabled , disabled if supported_games_only is enabled
+
 supported_games_only:  
  - Will select only from a list of supported games
    - If enabled this will always randomize the game selection as well
