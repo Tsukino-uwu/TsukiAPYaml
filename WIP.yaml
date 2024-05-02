@@ -1,0 +1,140 @@
+﻿
+
+          # some questions i had during the hours it took to me get triggers to work together/properly
+          # tl;dr: top to bottom activation order, and ofc indents as always
+          # answer: trigger1 picks an option to early, trigger2 ignore/overwrite as it will happen after trigger1 already did its thing
+          #
+          # can I have multiple option results in a trigger ?, can the result be another option name  ? :thinking: 
+          # or is there someway for a trigger to just inherit results from another trigger ?
+          # possible to make a trigger where if its true/false allows for different weights in normal options to trigger or not ?
+          # make a trigger affect what optiosn get picked somewhere else but not those options weight ?
+          # For triggers "If you would like the same thing to occur with multiple results, you would need multiple triggers for this."
+          # is it possible to grab previous results from other triggers instead of forcing true/false ? think triggers kinda overwrite each other right ?
+
+
+
+
+#WIP/extra section, not being worked on atm
+   
+
+   # async true/false option name at the start/top of yaml
+    
+   ## Game defaults should be for SYNC. Triggers will set ASYNC options.
+  # - option_category: null
+    # option_name: async
+    # option_result: true
+    # options:
+        # null:
+            # per_game_name: true
+        # Manual_Hatsune_Miku:
+            # song_total: random-range-80-100
+        # MegaMan Battle Network 3:
+            # include_jobs: true
+            # trade_quest_hinting: none
+        # Pokemon Emerald:
+            # dexsanity: true
+            # trainersanity: true
+            # goal: steven
+        # Pokemon Red and Blue:
+            # rival_name: FINSHNG
+        # Super Mario World:
+            # hidden_1up_checks: true
+            # bonus_block_checks: true
+            # blocksanity: true
+            # bosses_required: random-range-7-11
+            
+            
+# https://github.com/Cyb3RGER/sm_ap_tracker
+
+# https://github.com/StripesOO7/alttp-ap-poptracker-pack
+# https://www.youtube.com/watch?v=T0sSrY44PQ8 ALTTP 100% collection/guide
+
+# https://www.wiki.ctjot.com/doku.php?id=multiworld
+# chrono trigger
+
+
+
+
+
+
+# triggers:
+    # - option_category: Pokemon Red and Blue
+      # option_name: game_version
+      # option_result: red
+      # options:
+        # Pokemon Red and Blue:
+          # badgesanity:
+            # true: 50
+            # false_with_red: 50
+    # - option_category: Pokemon Red and Blue
+      # option_name: badgesanity
+      # option_result: false_with_red
+      # options:
+        # Pokemon Red and Blue:
+          # trainersanity: true
+          # badgesanity: false
+# The only way to trigger off of multiple things being true is to juggle fake options like false_with_red there
+# Here's an example of a Pokemon R/B trigger where if the game_version is red and badgesanity is false (50% chance), trainersanity is made true 
+
+
+
+
+
+
+# triggers:
+    # - option_category: Secret of Evermore
+      # option_name: doggomizer
+      # option_result: pupdunk
+      # options:
+        # Secret of Evermore:
+          # difficulty:
+            # normal: 50
+            # pupdunk_hard: 25
+            # pupdunk_mystery: 25
+    # - option_category: Secret of Evermore
+      # option_name: difficulty
+      # option_result: pupdunk_hard
+      # options:
+        # Secret of Evermore:
+          # difficulty: hard
+    # - option_category: Secret of Evermore
+      # option_name: difficulty
+      # option_result: pupdunk_mystery
+      # options:
+        # Secret of Evermore:
+          # difficulty: mystery
+          
+          #^better example
+          
+          
+          
+          
+          
+          
+          
+  # Each trigger must be used for exactly one option result. 
+  # If you would like the same thing to occur with multiple results, you would need multiple triggers for this.
+  #
+  # The only way to trigger off of multiple things being true is to juggle fake options
+  # its possible to use weights, and get a 2 true statement = do X thing, with just 1 option_result:
+  # example: 
+          
+  # triggers:
+    # - option_category: Factorio
+      # option_name: difficulty
+      # option_result: hard
+      # options:
+        # Factorio:
+          # maximum_science_pack:
+            # logistic: 50
+            # military: 50
+            # automation_with_hard_difficulty: 50
+    # - option_category: Factorio
+      # option_name: maximum_science_pack
+      # option_result: automation_with_hard_difficulty
+      # options:
+        # Factorio:
+          # satelite: hard
+          # maximum_science_pack: automation
+          
+  # here "satelite" is set to "vanilla" if "difficulty" is "hard" and "maximum_science_pack" is "automation"

@@ -26,7 +26,6 @@ per_game_name: true # if false, defaults to standard player/slot name Tsukino
 
 
 game: # This is only used if games selection is not randomized
-    #
    # Weight Guide
     #
     # Few examples:
@@ -45,25 +44,22 @@ game: # This is only used if games selection is not randomized
     # tl;dr weight/total weight
     #
     # any value at 1 or above can be used to enable something, 0=off/disabled
-    
-  # Latest tested/updated version
-   Pseudoregalia: 1 # 0.4.6
-   Pokemon Emerald: 0 # 0.4.6
+    # its possible to mix/enable multiple unsupported/supported games
+    # just #commented this way for easier categorizing
+    # also shows the latest tested/updated yaml versions
+  
+  #Unsupported games
+     Pseudoregalia: 0 # 0.4.6
+     
+  #Supported games
+     Pokemon Emerald: 1 # 0.4.6
    
 requires: #Version of Archipelago required for this yaml to work as expected.
   version: 0.4.6
   #Latest tested and updated version of game yamls
 
-    #Supported
-    
-     #Pokemon emerald 0.4.6
-
-    #Unsupported
-    
-     #Pseudoregalia 0.4.6
-
-  plando: items # plando_options in host.yaml                                 <--- THIS IS PROBLY THE !!!!
-  # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando     <--- @@@@@ ERROR! @@@@!!!!
+  plando: items # plando_options in host.yaml                                    <--- THIS IS PROBLY THE !!!!
+  # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando        <--- @@@@@ ERROR! @@@@!!!!
   #^this will throw an error if not enabled, disabled by default
   #
   # Some useful links~
@@ -392,13 +388,6 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     - Fortree City - Wingull Delivery Reward # backtracking
     - Route 109 - Seashore House Reward # need to fight 3 trainers
     - Route 111 - Winstrate Family Reward # need to fight the whole family, 5 trainers?
-    # fk this route, need to go back/save scum to grab both paths
-    - Route 123 - Item Below Ledges
-    - Route 123 - Item on Ledges 1
-    - Route 123 - Item on Ledges 2
-    - Route 123 - Item on Ledges 3
-    - Route 123 - Item on Ledges 4
-    - Route 123 - TM19 from Girl near Berries
 
   priority_locations:
     # 2x important rewards for each of the early gyms
@@ -1116,7 +1105,8 @@ triggers:
     # randomize_game_selection: starts here @@@@@@@@@@@@@@@@@
     #
     # supported_games_only is just here 
-    # as it has to trigger first to not overwrite things later on
+    # as it has to trigger and force randomize_game_selection 
+    # to be true first to not overwrite things later on
     option_name: supported_games_only
     option_result: true
     options:
@@ -1132,7 +1122,15 @@ triggers:
     option_result: true
     options:
       null:
-        #supported and unsupported games
+        # supported and unsupported games / All games here
+        #
+        # this will get ignored/overwritten if
+        # supported_games_only is true,
+        # if supported_games_only is false it just acts
+        # as a way to randomize all games here in the trigger
+        # instead of in "game:" at the top of the yaml
+        #
+        # weight can be used to randomize what games get picked
         game:
           Pseudoregalia: 1
           Pokemon Emerald: 1
@@ -1153,7 +1151,7 @@ triggers:
 
     options:
       null:
-      #supported game list
+      #supported game list / Only supported games here
         game:
           # weight can be used to randomize what games get picked
           Pokemon Emerald: 1 
@@ -1165,8 +1163,8 @@ triggers:
     option_result: true
     options:
         null:
-          # this will overwrite/ignore the default/sync settings in this yaml, and only use these specific ones
-          # anything left blank/unchanged will use the default template default values
+          # This will overwrite/ignore all of the default/sync settings in this yaml, and only use these specific ones
+          # anything left blank/unchanged will use the games default template default values
           Pokemon Emerald: 
               wild_pokemon:
                 completely_random: 50
@@ -1273,143 +1271,3 @@ triggers:
     options:
       null:
         name: Tsukino{NUMBER} #Default name if per game name is set to off/false
-
-          # some questions i had during the hours it took to me get these triggers above to work together/properly^
-          # tl;dr: top to bottom activation order, and ofc indents as always
-          # answer: trigger1 picks an option to early, trigger2 ignore/overwrite as it will happen after trigger1 already did its thing
-          #
-          # can I have multiple option results in a trigger ?, can the result be another option name  ? :thinking: 
-          # or is there someway for a trigger to just inherit results from another trigger ?
-          # possible to make a trigger where if its true/false allows for different weights in normal options to trigger or not ?
-          # make a trigger affect what optiosn get picked somewhere else but not those options weight ?
-          # For triggers "If you would like the same thing to occur with multiple results, you would need multiple triggers for this."
-          # is it possible to grab previous results from other triggers instead of forcing true/false ? think triggers kinda overwrite each other right ?
-
-
-
-
-   
-#WIP/extra section, not being worked on atm
-   
-
-   # async true/false option name at the start/top of yaml
-    
-   ## Game defaults should be for SYNC. Triggers will set ASYNC options.
-  # - option_category: null
-    # option_name: async
-    # option_result: true
-    # options:
-        # null:
-            # per_game_name: true
-        # Manual_Hatsune_Miku:
-            # song_total: random-range-80-100
-        # MegaMan Battle Network 3:
-            # include_jobs: true
-            # trade_quest_hinting: none
-        # Pokemon Emerald:
-            # dexsanity: true
-            # trainersanity: true
-            # goal: steven
-        # Pokemon Red and Blue:
-            # rival_name: FINSHNG
-        # Super Mario World:
-            # hidden_1up_checks: true
-            # bonus_block_checks: true
-            # blocksanity: true
-            # bosses_required: random-range-7-11
-            
-            
-# https://github.com/Cyb3RGER/sm_ap_tracker
-
-# https://github.com/StripesOO7/alttp-ap-poptracker-pack
-# https://www.youtube.com/watch?v=T0sSrY44PQ8 ALTTP 100% collection/guide
-
-# https://www.wiki.ctjot.com/doku.php?id=multiworld
-# chrono trigger
-
-
-
-
-
-
-# triggers:
-    # - option_category: Pokemon Red and Blue
-      # option_name: game_version
-      # option_result: red
-      # options:
-        # Pokemon Red and Blue:
-          # badgesanity:
-            # true: 50
-            # false_with_red: 50
-    # - option_category: Pokemon Red and Blue
-      # option_name: badgesanity
-      # option_result: false_with_red
-      # options:
-        # Pokemon Red and Blue:
-          # trainersanity: true
-          # badgesanity: false
-# The only way to trigger off of multiple things being true is to juggle fake options like false_with_red there
-# Here's an example of a Pokemon R/B trigger where if the game_version is red and badgesanity is false (50% chance), trainersanity is made true 
-
-
-
-
-
-
-# triggers:
-    # - option_category: Secret of Evermore
-      # option_name: doggomizer
-      # option_result: pupdunk
-      # options:
-        # Secret of Evermore:
-          # difficulty:
-            # normal: 50
-            # pupdunk_hard: 25
-            # pupdunk_mystery: 25
-    # - option_category: Secret of Evermore
-      # option_name: difficulty
-      # option_result: pupdunk_hard
-      # options:
-        # Secret of Evermore:
-          # difficulty: hard
-    # - option_category: Secret of Evermore
-      # option_name: difficulty
-      # option_result: pupdunk_mystery
-      # options:
-        # Secret of Evermore:
-          # difficulty: mystery
-          
-          #^better example
-          
-          
-          
-          
-          
-          
-          
-  # Each trigger must be used for exactly one option result. 
-  # If you would like the same thing to occur with multiple results, you would need multiple triggers for this.
-  #
-  # The only way to trigger off of multiple things being true is to juggle fake options
-  # its possible to use weights, and get a 2 true statement = do X thing, with just 1 option_result:
-  # example: 
-          
-  # triggers:
-    # - option_category: Factorio
-      # option_name: difficulty
-      # option_result: hard
-      # options:
-        # Factorio:
-          # maximum_science_pack:
-            # logistic: 50
-            # military: 50
-            # automation_with_hard_difficulty: 50
-    # - option_category: Factorio
-      # option_name: maximum_science_pack
-      # option_result: automation_with_hard_difficulty
-      # options:
-        # Factorio:
-          # satelite: hard
-          # maximum_science_pack: automation
-          
-  # here "satelite" is set to "vanilla" if "difficulty" is "hard" and "maximum_science_pack" is "automation"
