@@ -58,8 +58,8 @@ requires: #Version of Archipelago required for this yaml to work as expected.
   version: 0.4.6
   #Latest tested and updated version of game yamls
 
-  plando: items # plando_options in host.yaml                                    <--- THIS IS PROBLY THE !!!!
-  # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando        <--- @@@@@ ERROR! @@@@!!!!
+  plando: items # plando_options in host.yaml                                         <--- THIS IS PROBLY THE !!!!
+  # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando             <--- @@@@@ ERROR! @@@@!!!!
   #^this will throw an error if not enabled, disabled by default
   #
   # Some useful links~
