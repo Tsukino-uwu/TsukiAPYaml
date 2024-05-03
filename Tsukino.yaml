@@ -68,7 +68,7 @@ requires: #Version of Archipelago required for this yaml to work as expected.
   # AP Launcher:
   # https://github.com/ArchipelagoMW/Archipelago
   #
-  # Item Tracker:
+  # PopTracker:
   # https://github.com/black-sliver/PopTracker/
   #
   # Supported game item/location list:
@@ -82,7 +82,7 @@ requires: #Version of Archipelago required for this yaml to work as expected.
 
 Pseudoregalia: #Lunatic/hard settings
   # guide: https://github.com/pseudoregalia-modding/pseudoregalia-archipelago
-  # poptracker: https://github.com/Br00ty/pseudoregalia_brooty
+  # tracker: https://github.com/Br00ty/pseudoregalia_brooty
   
   progression_balancing:
     # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
@@ -324,7 +324,7 @@ Pseudoregalia: #Lunatic/hard settings
       
 Pokemon Emerald: #Champion 20%scaling casual ish
   # guide: https://archipelago.gg/tutorial/Pokemon%20Emerald/setup/en
-  # poptracker: https://github.com/AliceMousie/emerald-ap-tracker
+  # tracker: https://github.com/seto10987/Archipelago-Emerald-AP-Tracker/releases
 
   progression_balancing:
     normal: 50
