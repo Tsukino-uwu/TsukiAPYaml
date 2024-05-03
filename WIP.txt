@@ -1,4 +1,18 @@
 ﻿
+          # Manual_Hatsune_Miku:
+              # song_total: random-range-80-100
+          # MegaMan Battle Network 3:
+              # include_jobs: true
+              # trade_quest_hinting: none
+          # Pokemon Red and Blue:
+              # rival_name: FINSHNG
+          # Super Mario World:
+              # hidden_1up_checks: true
+              # bonus_block_checks: true
+              # blocksanity: true
+              # bosses_required: random-range-7-11  
+
+
 
           # some questions i had during the hours it took to me get triggers to work together/properly
           # tl;dr: top to bottom activation order, and ofc indents as always
