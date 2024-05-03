@@ -1178,6 +1178,8 @@ triggers:
                 true: 50
               rods:
                 true: 50
+              require_itemfinder:
+                true: 50
               hidden_items: # No clue where all of these are even with item finder, but its a lot of checks
                 true: 50
               npc_gifts:
@@ -1229,20 +1231,10 @@ triggers:
               remote_items:
                 true: 50
               exclude_locations: ["Pokedex - Shedinja",] #just in case
+              
+          #Pseudoregalia:
+              #-
 
-          # Manual_Hatsune_Miku:
-              # song_total: random-range-80-100
-          # MegaMan Battle Network 3:
-              # include_jobs: true
-              # trade_quest_hinting: none
-          # Pokemon Red and Blue:
-              # rival_name: FINSHNG
-          # Super Mario World:
-              # hidden_1up_checks: true
-              # bonus_block_checks: true
-              # blocksanity: true
-              # bosses_required: random-range-7-11    
-            
     # per_game_name: starts here @@@@@@@@@@@@@@@@@
     #
     # has to trigger at the bottom/last,
