@@ -6,6 +6,10 @@
 # ⠀⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧
 # Used to describe your yaml. Useful if you have multiple files,
 description: Default Tsukino Template, with lot of comments explaining how weight, plando, triggers and everything else works
+
+ # https://github.com/Tsukino-uwu/TsukiAPYaml
+ # You can find the latest version of this yaml at github.
+ #
  # Explanations are mostly done the first time something new appears in the yaml.
  # so if something is missing #comments or an explanation its
  # probly somewhere further up and already explained
@@ -57,7 +61,6 @@ game: # This is only used if games selection is not randomized
    
 requires: #Version of Archipelago required for this yaml to work as expected.
   version: 0.4.6
-  #Latest tested and updated version of game yamls
 
   plando: items # plando_options in host.yaml                                         <--- THIS IS PROBLY THE !!!!
   # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando             <--- @@@@@ ERROR! @@@@!!!!
@@ -1113,8 +1116,17 @@ triggers:
     option_name: supported_games_only
     # option_name specifies the name of the triggering option.
     #
+    # These can also use custom names if you are doing custom functions,
+    # the name can technically be anything in these cases and it would still work
+    # as long as there is a function attached, just like this option name "supported_games_only" is also used at the top of this yaml
+    # and changes the true/false value for this one down here in the trigger settings by sharing the same name
+    #
+    #
     # Example: shop_item_slots
     # This can be any option from any category defined in the YAML file in either root or a game section.
+    #
+    # tl;dr make up a random or descriptive name, add a function to it by
+    # making it change something when mentioned and the result is a value or true/false
     
     option_result: true
     # option_result specifies the value of the option that activates this trigger.
@@ -1140,11 +1152,15 @@ triggers:
       
       
         randomize_game_selection: true
+        # This is used for randomizing games, the only thing it does is
+        # to pick games from its own "game:" list instead of from "game:" at the top the yaml
+        # if its set to true. 
+        #
         # If randomized_game_selection is false
-        # it decides the game from "game:" without using triggers,
-        # manually at the top of the yaml
-        # there is no need for a false trigger option here 
-        # as randomize_game_selection will always be true, when supported_games_only is true
+        # you have to manually decides the game from "game:"
+        # at the top of the yaml without using triggers,
+        # there is no need for a false trigger option here because of this, its supposed to do nothing if disabled/false
+        # and randomize_game_selection will always be true, when supported_games_only is true
         
   - option_name: randomize_game_selection
     option_result: true
