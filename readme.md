@@ -1,5 +1,7 @@
-### Last updated for: v0.4.6
 ### Multi game Yaml/config for https://archipelago.gg / [archipelago github](https://github.com/ArchipelagoMW/Archipelago)
+
+### Last updated for: v0.4.6
+   - The single game templates are probly outdated compared to the main yaml
 
 # Don't forget to enable plando "items" in host.yaml
 ## [Enabling Plando](https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando)
