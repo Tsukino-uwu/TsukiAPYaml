@@ -23,6 +23,7 @@ async: false # if true, this will only change game settings, not pick specific a
  # Otherwise known as "long seed", usually just more tasks/bosses and total checks
  
 per_game_name: true # if false, defaults to standard player/slot name Tsukino
+ # All names can be changed at the bottom of this yaml.
 
 
 game: # This is only used if games selection is not randomized
@@ -125,7 +126,8 @@ Pseudoregalia: #Lunatic/hard settings
     # A comma has to be used after every "itemname" unless its the last item in the list
     # else a new item/line won't get recognized
     #
-    # if something is #commented, it will be ignored/skipped without having to remove it
+    # if a row is #commented, it will be ignored/skipped without having to remove it
+    # can be convenient if you just want to disable something instead of removing
     [ 
     # "Major Key - Empty Bailey",
     # "Major Key - The Underbelly",
@@ -138,7 +140,7 @@ Pseudoregalia: #Lunatic/hard settings
     # Forces these items to be outside their native world.
     #
     # - itemname can also be used, if you want to avoid using commas/exclamation marks
-    # Imo less room for errors as its not possible to miss/forget commas anywhere 
+    # In my opinion this has less room for errors as its not possible to miss/forget commas anywhere 
     # also looks clean & is simpler to edit
     - Health Piece
     - Aerial Finesse
@@ -1092,7 +1094,7 @@ triggers:
   # optionname: starts here @@@@@@@@@@@@@@@@@
   #
   # to have an easier time to know where the main function of something actually start/stop code wise
-  # but they might be affected earlier/later on in other triggers if required
+  # but they might be affected earlier/later on in other triggers if required.
   #
   
   - option_category: null # 
@@ -1107,15 +1109,41 @@ triggers:
     # supported_games_only is just here 
     # as it has to trigger and force randomize_game_selection 
     # to be true first to not overwrite things later on
+    
     option_name: supported_games_only
+    # option_name specifies the name of the triggering option.
+    #
+    # Example: shop_item_slots
+    # This can be any option from any category defined in the YAML file in either root or a game section.
+    
     option_result: true
+    # option_result specifies the value of the option that activates this trigger.
+    # 
+    # Example: 15
+    # Each trigger must be used for exactly one option result.
+    # If you would like the same thing to occur with multiple results, you would need multiple triggers for this.
+    
     options:
+    #options is where you define what will happen when the trigger activates.
+    #This can be something as simple as ensuring another option also gets selected or placing an item in a certain location.
+    #It is possible to have multiple things happen in this section.
+    
       null:
+      # "null" = root, When used under "options:" like here in this context,
+      # root is usually used for making custom non game triggers,
+      # or if you want to guarantee that something will overwrite previous triggers.
+      # 
+      # this will probly just be "game:" most of the time, or a specific games name,
+      # but you can also use null followed by a games/options name
+      # to force default values for anything that is not specified
+      # if you want to ignore/overwrite previous settings for that game/option.
+      
+      
         randomize_game_selection: true
         # If randomized_game_selection is false
-        # it decides the game from "game:" without using triggers
+        # it decides the game from "game:" without using triggers,
         # manually at the top of the yaml
-        # there is no need for a false trigger option here, 
+        # there is no need for a false trigger option here 
         # as randomize_game_selection will always be true, when supported_games_only is true
         
   - option_name: randomize_game_selection
@@ -1137,17 +1165,8 @@ triggers:
           
     # supported_games_only: starts here @@@@@@@@@@@@@@@@@
   - option_name: supported_games_only
-    # option_name specifies the name of the triggering option.
-    #
-    # Example: shop_item_slots
-    # This can be any option from any category defined in the YAML file in either root or a game section.
     
     option_result: true
-    # option_result specifies the value of the option that activates this trigger.
-    # 
-    # Example: 15
-    # Each trigger must be used for exactly one option result.
-    # If you would like the same thing to occur with multiple results, you would need multiple triggers for this.
 
     options:
       null:
@@ -1163,12 +1182,36 @@ triggers:
     option_result: true
     options:
         null:
-          # This will overwrite/ignore all of the default/sync settings in this yaml, and only use these specific ones
-          # anything left blank/unchanged will use the games default template default values
+       # if you use null here
+       # This will overwrite/ignore all of the default/sync game settings in this yaml, and only use these specific ones due to changing root,
+       # anything left blank/unchanged will use the games default template default values.
+       #
+       # if you want to keep the changes done earlier in this yaml, you can instead just comment or remove "null:" and only use the game names
+       # and it won't use the default template default values. explained more/why under "wild_pokemon:" a few rows down
+          
+          Pseudoregalia:
+              #this game is not really made for async due to just having 52total checks, but these are the hardest settings
+              logic_level:
+                lunatic: 50
+              obscure_logic:
+                true: 50
+              progressive_breaker:
+                true: 50
+              progressive_slide:
+                true: 50
+              split_sun_greaves:
+                true: 50
+              death_link:
+                true: 50
+                
           Pokemon Emerald: 
+              #1334 total checks
               wild_pokemon:
                 completely_random: 50
-                  #Vanilla wild pokemon locations give an error when dexsanity is used
+                  # Vanilla wild pokemon location give an error when dexsanity is used,
+                  # This whole async section is indented under options null to force default values
+                  # unless they are changed, this sets wild pokemon to be random again instead of vanilla
+                  # tl;dr ignore all sync/previous settings, force only these async settings
               dexsanity: true
               trainersanity: true
               goal: steven
@@ -1180,7 +1223,7 @@ triggers:
                 true: 50
               require_itemfinder:
                 true: 50
-              hidden_items: # No clue where all of these are even with item finder, but its a lot of checks
+              hidden_items:
                 true: 50
               npc_gifts:
                 true: 50
@@ -1231,9 +1274,6 @@ triggers:
               remote_items:
                 true: 50
               exclude_locations: ["Pokedex - Shedinja",] #just in case
-              
-          #Pseudoregalia:
-              #-
 
     # per_game_name: starts here @@@@@@@@@@@@@@@@@
     #
@@ -1245,6 +1285,8 @@ triggers:
     #
     # Spaces will be replaced with underscores and there is a 16-character limit for player/slot names.
     # {NUMBER} can be used to avoid duplicate name errors, but only possible if 15 or less characters are used
+    #
+    # each name has a #number, for showing how many letters each name has at a quick glance
 
     option_result: Pseudoregalia
     
@@ -1262,4 +1304,5 @@ triggers:
     option_result: false
     options:
       null:
-        name: Tsukino{NUMBER} #Default name if per game name is set to off/false
+        name: Tsukino{NUMBER} #7 
+          #Default name if per game name is set to off/false
