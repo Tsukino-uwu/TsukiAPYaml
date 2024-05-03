@@ -19,7 +19,7 @@ randomize_game_selection: false # game gacha, if false picks games from "game:" 
 supported_games_only: false # if false, picks all unsupported & supported games
  #This will force randomized game selection to be true
 
-async: false # if true, this will only change game settings, not pick specific async games
+async: true # if true, this will only change game settings, not pick specific async games
  # Otherwise known as "long seed", usually just more tasks/bosses and total checks
  
 per_game_name: true # if false, defaults to standard player/slot name Tsukino
@@ -1191,13 +1191,15 @@ triggers:
        #
        # if you want to keep the changes done earlier in this yaml, you can instead just comment or remove "null:" and only use the game names
        # and it won't use the default template default values, and instead use whatever the previous settings in the yaml use for things left blank
-       # tl;dr This will only ignore/overwrite these specific settings, but keep previous/sync settings from this yaml.
+       # tl;dr This will only ignore/overwrite these specific settings, but keep previous/sync settings from this yaml including plando's.
        # this requires less things to be changed overall and is easier to manage, as you only need to specify the async specific settings
           
           Pseudoregalia:
               #this game is not really made for async with only 50~ total checks, but this is the hardest logic/difficulty
               logic_level:
                 lunatic: 50
+              plando_items: #this can be used if you want to disable any previous/sync plando options in the yaml.
+                []
                 
           Pokemon Emerald: 
               dexsanity: true
@@ -1220,6 +1222,8 @@ triggers:
               normalize_encounter_rates:
                 true: 50
               remove_roadblocks: #forcing this to be empty/off
+                []
+              plando_items:
                 []
 
     # per_game_name: starts here @@@@@@@@@@@@@@@@@
