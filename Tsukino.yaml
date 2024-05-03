@@ -1181,46 +1181,32 @@ triggers:
   - option_name: async
     option_result: true
     options:
-        null:
+      #  null:
        # if you use null here
-       # This will overwrite/ignore all of the default/sync game settings in this yaml, and only use these specific ones due to changing root,
-       # anything left blank/unchanged will use the games default template default values.
+       # It will overwrite/ignore all of the default/sync game settings in this yaml, and only use these specific ones due to changing root,
+       # This whole async section is indented under options null so its possible to force default values unless they are changed
+       # anything left blank/unchanged will use the games default template default values, aka default defaults not this yaml's defaults.
+       # tl;dr ignore all sync/previous settings, force only these async settings and ignore/overwrite everything else when null: gets used,
+       # this might cause errors if some settings don't work while other settings are set to default.
        #
        # if you want to keep the changes done earlier in this yaml, you can instead just comment or remove "null:" and only use the game names
-       # and it won't use the default template default values. explained more/why under "wild_pokemon:" a few rows down
+       # and it won't use the default template default values, and instead use whatever the previous settings in the yaml use for things left blank
+       # tl;dr This will only ignore/overwrite these specific settings, but keep previous/sync settings from this yaml.
+       # this requires less things to be changed overall and is easier to manage, as you only need to specify the async specific settings
           
           Pseudoregalia:
-              #this game is not really made for async due to just having 52total checks, but these are the hardest settings
+              #this game is not really made for async with only 50~ total checks, but this is the hardest logic/difficulty
               logic_level:
                 lunatic: 50
-              obscure_logic:
-                true: 50
-              progressive_breaker:
-                true: 50
-              progressive_slide:
-                true: 50
-              split_sun_greaves:
-                true: 50
-              death_link:
-                true: 50
                 
           Pokemon Emerald: 
-              #1334 total checks
+              dexsanity: true
               wild_pokemon:
                 completely_random: 50
-                  # Vanilla wild pokemon location give an error when dexsanity is used,
-                  # This whole async section is indented under options null to force default values
-                  # unless they are changed, this sets wild pokemon to be random again instead of vanilla
-                  # tl;dr ignore all sync/previous settings, force only these async settings
-              dexsanity: true
+                  # Vanilla wild pokemon location give an error when dexsanity is used
+                  # this is changed just in case, so nothing will break or give errors
               trainersanity: true
               goal: steven
-              start_inventory:
-                Max Repel: 99 # 1stack for convenience
-              bikes:
-                true: 50
-              rods:
-                true: 50
               require_itemfinder:
                 true: 50
               hidden_items:
@@ -1229,51 +1215,12 @@ triggers:
                 true: 50
               berry_trees:
                 true: 50
-              starters:
-                completely_random: 50
-              trainer_parties:
-                completely_random: 50
-              force_fully_evolved:
-                random-range-40-60: 50
-              legendary_encounters:
-                completely_random: 50
-              misc_pokemon:
-                completely_random: 50
-              abilities:
-                follow_evolutions: 50
-              ability_blacklist: ["Wonder Guard", "Arena Trap", "Shadow Tag", "Magnet Pull", "Truant", "Cacophony",]
-              move_blacklist: ["Minimize", "Double Team", "Protect", "Substitute", "Detect", "Sand-Attack", "Smokescreen",]
-              level_up_moves:
-                start_with_four_moves: 50
-              tm_tutor_compatibility:
-                100: 50
-              hm_compatibility:
-                100: 50
-              reusable_tms_tutors:
-                true: 50
               guaranteed_catch:
                 true: 50
               normalize_encounter_rates:
                 true: 50
-              exp_modifier:
-                300: 50
-              blind_trainers:
-                true: 50
-              better_shops:
-                true: 50
-              extra_boulders:
-                true: 50
-              extra_bumpy_slope:
-                true: 50
-              modify_118:
-                true: 50
-              turbo_a:
-                true: 50
-              receive_item_messages:
-                progression: 50
-              remote_items:
-                true: 50
-              exclude_locations: ["Pokedex - Shedinja",] #just in case
+              remove_roadblocks: #forcing this to be empty/off
+                []
 
     # per_game_name: starts here @@@@@@@@@@@@@@@@@
     #
