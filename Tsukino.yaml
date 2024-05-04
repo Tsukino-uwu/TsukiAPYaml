@@ -145,6 +145,9 @@ Pseudoregalia: #Lunatic/hard settings
     # - itemname can also be used, if you want to avoid using commas/exclamation marks
     # In my opinion this has less room for errors as its not possible to miss/forget commas anywhere 
     # also looks clean & is simpler to edit
+    #
+    # also possible to use "Everything" if you want every single item,
+    # but it might cause errors if it can't properly place items anywhere
     - Health Piece
     - Aerial Finesse
     - Pilgrimage
@@ -165,6 +168,10 @@ Pseudoregalia: #Lunatic/hard settings
 
   start_hints:
     # Start with these item's locations prefilled into the !hint command.
+    #
+    # Everywhere, can be used for getting all hints from all locations
+    # 
+    # "Everywhere" has to be used here instead of "Everything" due to hints being locations and not items.
     []
 
   start_location_hints:
@@ -177,6 +184,8 @@ Pseudoregalia: #Lunatic/hard settings
 
   priority_locations:
     # Prevent these locations from having an unimportant item
+    #
+    # "Everywhere" can be used to give all items priority
     []
     
   item_links:
@@ -226,8 +235,8 @@ Pseudoregalia: #Lunatic/hard settings
     true: 50
     
   plando_items:
-    #Item plando allows a player to place an item in a specific location or specific locations,
-    #or place multiple items into a list of specific locations both in their own game or in another player's game.
+    # Item plando allows a player to place an item in a specific location or specific locations,
+    # or place multiple items into a list of specific locations both in their own game or in another player's game.
     #
     # Single Placement is when you use a plando block to place a single item at a single location.
     # "item" is the item you would like to place and location is the location to place it.
@@ -253,28 +262,29 @@ Pseudoregalia: #Lunatic/hard settings
     #
     
     - item:
-      #https://archipelago.gg/datapackage, item/location list for supported games
-      #Case sensitive item name: amount
+      # https://archipelago.gg/datapackage, item/location list for supported games
+      # Case sensitive item name: amount
         Air Kick: 1
         
-      #early_locations will add all sphere 1 locations (locations logically reachable only with your starting inventory)
-      #non_early_locations will add all locations beyond sphere 1 (locations that require finding at least one item before they become logically reachable)
-      #can also use case sensitive game locations like "Ganons Tower - Compass Room - Top Right" etc
+      # early_locations will add all sphere 1 locations (locations logically reachable only with your starting inventory)
+      # non_early_locations will add all locations beyond sphere 1 (locations that require finding at least one item before they become logically reachable)
+      # can also use case sensitive game locations like "Ganons Tower - Compass Room - Top Right" etc
+      # Everywhere, can also be used if you want all locations
       location: early_locations
       
-      #determines if the item should be taken from the item pool or added to it. This can be true or false and defaults to true if omitted.
+      # determines if the item should be taken from the item pool or added to it. This can be true or false and defaults to true if omitted.
       from_pool: true
       
-      #world settings
-      #If a number is used, it targets that slot or player number in the multiworld.
-      #If a name is used, it will target the world with that player name.
-      #If set to true, it will be any player's world besides your own.
-      #If set to false, it will target your own world.
-      #If set to null, it will target a random world in the multiworld.
-      #If a list of names is used, it will target the games with the player names specified.
+      # world settings
+      # If a number is used, it targets that slot or player number in the multiworld.
+      # If a name is used, it will target the world with that player name.
+      # If set to true, it will be any player's world besides your own.
+      # If set to false, it will target your own world.
+      # If set to null, it will target a random world in the multiworld.
+      # If a list of names is used, it will target the games with the player names specified.
       world: true
       
-      #the percentage chance for the relevant block to trigger. This can be any value from 0 to 100 and if omitted will default to 100.
+      # the percentage chance for the relevant block to trigger. This can be any value from 0 to 100 and if omitted will default to 100.
       percentage: 100
       
       # determines whether the generator will fail if the item can't be placed in the location. 
