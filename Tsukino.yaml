@@ -88,10 +88,18 @@ Pseudoregalia: #Lunatic/hard settings
   # tracker: https://github.com/Br00ty/pseudoregalia_brooty
   
   progression_balancing:
-    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
-    # A lower setting means more getting stuck. A higher setting means less getting stuck.
+    # This is only used if there are multiple worlds,
+    # it won't change anything for solo seeds
     #
-    # You can define additional values between the minimum and maximum values.
+    # A system that can move progression earlier, to try and prevent the player from getting stuck and bored early.
+    # Basically, this will forces a % of your progression items to be available earlier (earlier logic spheres)
+    #
+    # With the default normal/50%, if the furthest player can access 40% of their items, 
+    # the randomizer tries to let you access at least 20% of your items. 50% of 40% is 20%.
+    # its not guaranteed that it will be able to bring you up to this threshold
+    #
+    # You can define additional values between the minimum and maximum values,
+    # A lower setting means more getting stuck. A higher setting means less getting stuck.
     # Minimum value is 0
     # Maximum value is 99
     # tl;dr low=hard, high=easy
