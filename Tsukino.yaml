@@ -5,7 +5,8 @@
 # ⠀⣶⣿⣦⣜⣿⣿⣿⡟⠻⣿⣿⣿⣿⣿⣿⣿⡿⢿⡏⣴⣺⣦⣙⣿⣷⣄⠀⠀⠀
 # ⠀⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧
 # Used to describe your yaml. Useful if you have multiple files,
-description: Default Tsukino Template, with lot of comments explaining how weight, plando, triggers and everything else works
+description: Default Tsukino Template
+#with lot of comments explaining how weight, plando, triggers and everything else works
 
  # https://github.com/Tsukino-uwu/TsukiAPYaml
  # You can find the latest version of this yaml at github.
@@ -23,7 +24,7 @@ randomize_game_selection: false # game gacha, if false picks games from "game:" 
 supported_games_only: false # if false, picks all unsupported & supported games
  #This will force randomized game selection to be true
 
-async: true # if true, this will only change game settings, not pick specific async games
+async: false # if true, this will only change game settings, not pick specific async games
  # Otherwise known as "long seed", usually just more tasks/bosses and total checks
  
 per_game_name: true # if false, defaults to standard player/slot name Tsukino
@@ -54,13 +55,13 @@ game: # This is only used if games selection is not randomized
     # also shows the latest tested/updated yaml versions
   
   #Unsupported games
-     Pseudoregalia: 0 # 0.4.6
+     Pseudoregalia: 0 # 0.5.1 (tested, but nothing new/changed since 0.4.6)
      
   #Supported games
-     Pokemon Emerald: 1 # 0.4.6
+     Pokemon Emerald: 1 # 0.5.1 (tested, but nothing new/changed since 0.4.6)
    
 requires: #Version of Archipelago required for this yaml to work as expected.
-  version: 0.4.6
+  version: 0.5.1
 
   plando: items # plando_options in host.yaml                                         <--- THIS IS PROBLY THE !!!!
   # https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando             <--- @@@@@ ERROR! @@@@!!!!
@@ -116,11 +117,11 @@ Pseudoregalia: #Lunatic/hard settings
     random-high: 0
     disabled: 0 # equivalent to 0
     random-range-10-50: 0 # random value between 10-50
-    random-range-50-99: 50 # random value between 50-99
+    random-range-50-99: 0 # random value between 50-99
     10: 0 # equivalent to 10
     30: 0 # equivalent to 30
     normal: 0 # equivalent to 50
-    extreme: 0 # equivalent to 99
+    extreme: 50 # equivalent to 99
 
   accessibility:
     # Set rules for reachability of your items/locations.
@@ -315,7 +316,7 @@ Pseudoregalia: #Lunatic/hard settings
       location: non_early_locations
       from_pool: true
       world: true
-      percentage: 66
+      percentage: 100
       force: silent # Just in case, so it can't break/error due to running out of spots
       
       # "count:" can be used to set the maximum number of items placed from the block. The default is 1 if using item and False if using items
@@ -340,8 +341,8 @@ Pseudoregalia: #Lunatic/hard settings
       percentage: 100
       force: silent
       count:
-        min: 1
-        max: 3
+        min: 2
+        max: 5
       
 Pokemon Emerald: #Champion 20%scaling casual ish
   # guide: https://archipelago.gg/tutorial/Pokemon%20Emerald/setup/en
@@ -1270,6 +1271,7 @@ triggers:
     #
     # Spaces will be replaced with underscores and there is a 16-character limit for player/slot names.
     # {NUMBER} can be used to avoid duplicate name errors, but only possible if 15 or less characters are used
+    # Make sure names are 15 character or shorter if using {NUMBER} , as 16 + {NUMBER} = 17 / will cause errors
     #
     # each name has a #number, for showing how many letters each name has at a quick glance
 
@@ -1283,7 +1285,7 @@ triggers:
     option_result: Pokemon Emerald
     options:
       null:
-        name: TsukiPkmnEmerald{NUMBER} #16
+        name: TsukiPkmnEmrld{NUMBER} #14
 
   - option_name: per_game_name
     option_result: false
