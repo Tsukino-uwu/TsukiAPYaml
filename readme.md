@@ -1,7 +1,7 @@
 ### Multi game Yaml for https://archipelago.gg / [archipelago github](https://github.com/ArchipelagoMW/Archipelago)
 With lot of comments explaining how weight, plando, triggers and everything else inside the yaml works
 
-### Last updated for: v0.4.6
+### Last updated for: v0.5.1
 
 # Don't forget to enable plando "items" in host.yaml
 ## [Enabling Plando](https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando)
