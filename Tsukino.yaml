@@ -187,9 +187,8 @@ Pseudoregalia: #Lunatic/hard settings
     # Start with these locations and their item prefilled into the !hint command
     []
 
-  exclude_locations:
-    # Prevent these locations from having an important item
-    []
+  exclude_locations: ["The Underbelly - Surrounded By Holes"]
+    # Prevent these locations from having an important item, underbelly major key requires downpatch so this is a workaround
 
   priority_locations:
     # Prevent these locations from having an unimportant item
@@ -344,7 +343,7 @@ Pseudoregalia: #Lunatic/hard settings
         min: 2
         max: 5
       
-Pokemon Emerald: #Champion 20%scaling casual ish
+Pokemon Emerald: #Champion casual ish
   # guide: https://archipelago.gg/tutorial/Pokemon%20Emerald/setup/en
   # tracker: https://github.com/seto10987/Archipelago-Emerald-AP-Tracker/releases
 
@@ -366,7 +365,7 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     #In pkmn emerald items will appear in your pc/box storage, not in your inventory when first starting the game
 
     Max Repel: 198 # 99x2 stacks
-    Rare Candy: 99 # 99x1 stacks, nice for repel to work
+    #Rare Candy: 99 # 99x1 stacks, nice for repel to work
     Poke Ball: 1 # if struggling with rival at the start
     #for a somewhat pre sorted inventory at the top
     Full Heal: 2
@@ -409,20 +408,19 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     - Artisan Cave B1F - Hidden Item 4
     - Artisan Cave B1F - Item
     # annoying/slow
-    - Fortree City - Wingull Delivery Reward # backtracking
-    - Route 109 - Seashore House Reward # need to fight 3 trainers
-    - Route 111 - Winstrate Family Reward # need to fight the whole family, 5 trainers?
+    #- Fortree City - Wingull Delivery Reward # backtracking
+    #- Route 109 - Seashore House Reward # need to fight 3 trainers
+    #- Route 111 - Winstrate Family Reward # need to fight the whole family, 4 trainers
+    - Route 132 - Item 1
+    - Route 132 - Item 2
+    - Route 133 - Item 1
+    - Route 133 - Item 2
+    - Route 133 - Item 3
+    - Route 134 - Item 1
+    - Route 134 - Item 2
 
   priority_locations:
-    # 2x important rewards for each of the early gyms
-    - Rustboro Gym - Stone Badge
-    - Rustboro Gym - TM39 from Roxanne
-    - Dewford Gym - Knuckle Badge
-    - Dewford Gym - TM08 from Brawly
-    - Mauville Gym - Dynamo Badge
-    - Mauville Gym - TM34 from Wattson
-    - Lavaridge Gym - Heat Badge
-    - Lavaridge Gym - TM50 from Flannery
+    []
 
   item_links:
     []
@@ -563,8 +561,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # 
     # Badges: Obtain some number of badges
     # Gyms: Defeat some number of gyms
-    badges: 50
-    gyms: 0
+    badges: 0
+    gyms: 50
 
   norman_count:
     # Sets the number of badges/gyms required to challenge the Petalburg Gym
@@ -572,7 +570,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 7
-    7: 50
+    7: 0
+    4: 50
     random-range-5-7: 0
     random: 0
     random-low: 0
@@ -675,9 +674,9 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # Completely Random: There are no restrictions
     vanilla: 0
     match_base_stats: 0
-    match_type: 50
+    match_type: 0
     match_base_stats_and_type: 0
-    completely_random: 0
+    completely_random: 50
 
   trainer_party_blacklist:
     # Prevents listed species from appearing in opponent trainers' parties if opponent parties are randomized.
@@ -886,9 +885,9 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 1000
-    300: 0
+    300: 50
     100: 0
-    random-range-300-600: 50
+    random-range-300-600: 0
     random: 0
     random-low: 0
     random-high: 0
@@ -914,9 +913,9 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # Off: The vanilla experience
     # Additive: The modifier you apply to your team is a flat bonus
     # Multiplicative: The modifier you apply to your team is a percent bonus
-    off: 0
+    off: 50
     additive: 0
-    multiplicative: 50
+    multiplicative: 0
 
   match_trainer_levels_bonus:
     # A level bonus (or penalty) to apply to your team when matching an opponent's levels.
@@ -930,8 +929,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is -100
     # Maximum value is 100
-    0: 0
-    20: 50 # 1+ at lvl 5, 4-6+ at lvl 20-30, 10-12+ at lvl 50-60
+    0: 50
+    20: 0 # 1+ at lvl 5, 4-6+ at lvl 20-30, 10-12+ at lvl 50-60
     random: 0
     random-low: 0
     random-high: 0
@@ -945,8 +944,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # Minimum value is 0
     # Maximum value is 100
     0: 0
-    100: 50
-    random-range-0-10: 0
+    100: 0
+    random-range-0-10: 50
     random: 0
     random-low: 0
     random-high: 0
@@ -971,7 +970,6 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # "Aqua Hideout Grunts"
     # "Seafloor Cavern Aqua Grunt"
     #
-    - Route 110 Aqua Grunts
     - Seafloor Cavern Aqua Grunt
 
   extra_boulders:
@@ -1016,8 +1014,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
     # All: Every item shows a message
     # Progression: Only progression items show a message
     # None: All items are added to your bag silently (badges will still show)
-    all: 0
-    progression: 50
+    all: 50
+    progression: 0
     none: 0
 
   remote_items:
@@ -1030,8 +1028,8 @@ Pokemon Emerald: #Champion 20%scaling casual ish
 
   music:
     # Shuffles music played in any situation where it loops. Includes many FRLG tracks.
-    false: 50
-    true: 0
+    false: 0
+    true: 50
     random: 0
 
   fanfares:
@@ -1071,20 +1069,6 @@ Pokemon Emerald: #Champion 20%scaling casual ish
       from_pool: true
       world: true
       percentage: 100
-      force: true
-    - item:
-        Letter: 1
-      location: Rusturf Tunnel - Item West
-      from_pool: true
-      world: false # placed in local world, due to local location.
-      percentage: 100
-      force: true
-    - item:
-        Devon Goods: 1
-      location: Granite Cave 1F - TM47 from Steven # when you deliver the letter
-      from_pool: true
-      world: false # placed in local world, due to local location.
-      percentage: 33
       force: true
 
 triggers:
@@ -1233,6 +1217,7 @@ triggers:
               #this game is not really made for async with only 50~ total checks, but this is the hardest logic/difficulty
               logic_level:
                 lunatic: 50
+              exclude_locations: ["The Underbelly - Surrounded By Holes"]
               plando_items: #this can be used if you want to disable any previous/sync plando options in the yaml.
                 []
                 
