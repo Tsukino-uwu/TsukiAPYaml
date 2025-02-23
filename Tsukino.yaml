@@ -21,7 +21,7 @@ description: Default Tsukino Template
 # true=on,false=off
 randomize_game_selection: false # game gacha, if false picks games from "game:" instead
 
-supported_games_only: false # if false, picks all unsupported & supported games
+supported_games_only: true # if false, picks all unsupported & supported games
  #This will force randomized game selection to be true
 
 async: false # if true, this will only change game settings, not pick specific async games
@@ -385,21 +385,21 @@ Pokemon Emerald: #Champion casual ish
 
   exclude_locations:
     # So much work getting to this one compared to the other gyms
-    - Sootopolis Gym - Rain Badge
-    - Sootopolis Gym - TM03 from Juan
+    #- Sootopolis Gym - Rain Badge
+    #- Sootopolis Gym - TM03 from Juan
     # 2nd half of Trick house
-    - Trick House Puzzle 5 - Reward
-    - Trick House Puzzle 6 - Item
-    - Trick House Puzzle 6 - Reward
-    - Trick House Puzzle 7 - Item
-    - Trick House Puzzle 7 - Reward
-    - Trick House Puzzle 8 - Item
+    #- Trick House Puzzle 5 - Reward
+    #- Trick House Puzzle 6 - Item
+    #- Trick House Puzzle 6 - Reward
+    #- Trick House Puzzle 7 - Item
+    #- Trick House Puzzle 7 - Reward
+    #- Trick House Puzzle 8 - Item
     # All Safari zone items
-    - Safari Zone N - Item in Grass
-    - Safari Zone NW - Item Behind Pond
-    - Safari Zone NE - Item on Ledge
-    - Safari Zone SW - Item Behind Pond
-    - Safari Zone SE - Item in Grass
+    #- Safari Zone N - Item in Grass
+    #- Safari Zone NW - Item Behind Pond
+    #- Safari Zone NE - Item on Ledge
+    #- Safari Zone SW - Item Behind Pond
+    #- Safari Zone SE - Item in Grass
     # Battle frontier, pretty out of the way spots
     - Artisan Cave 1F - Item
     - Artisan Cave B1F - Hidden Item 1
@@ -411,13 +411,13 @@ Pokemon Emerald: #Champion casual ish
     #- Fortree City - Wingull Delivery Reward # backtracking
     #- Route 109 - Seashore House Reward # need to fight 3 trainers
     #- Route 111 - Winstrate Family Reward # need to fight the whole family, 4 trainers
-    - Route 132 - Item 1
-    - Route 132 - Item 2
-    - Route 133 - Item 1
-    - Route 133 - Item 2
-    - Route 133 - Item 3
-    - Route 134 - Item 1
-    - Route 134 - Item 2
+    #- Route 132 - Item 1
+    #- Route 132 - Item 2
+    #- Route 133 - Item 1
+    #- Route 133 - Item 2
+    #- Route 133 - Item 3
+    #- Route 134 - Item 1
+    #- Route 134 - Item 2
 
   priority_locations:
     []
@@ -470,8 +470,8 @@ Pokemon Emerald: #Champion casual ish
 
   event_tickets:
     # Adds the event tickets to the pool, which let you access legendaries by sailing from Lilycove
-    false: 50
-    true: 0
+    false: 0
+    true: 50
 
   rods:
     # Adds fishing rods to the pool
@@ -495,8 +495,8 @@ Pokemon Emerald: #Champion casual ish
 
   berry_trees:
     # Adds berry trees to the pool. Empty soil patches are converted to locations and contribute Sitrus Berries to the pool.
-    false: 50
-    true: 0
+    false: 0
+    true: 50
 
   dexsanity:
     # Adding a "caught" pokedex entry gives you an item (catching, evolving, trading, etc.).
@@ -692,9 +692,9 @@ Pokemon Emerald: #Champion casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 1
     # Maximum value is 100
-    random-range-40-60: 50
+    random-range-40-60: 0
     100: 0
-    random: 0
+    random: 50
     random-low: 0
     random-high: 0
 
@@ -783,7 +783,8 @@ Pokemon Emerald: #Champion casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    33: 50
+    33: 0
+    0: 50
     random: 0
     random-low: 0
     random-high: 0
@@ -797,7 +798,8 @@ Pokemon Emerald: #Champion casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    5: 50
+    5: 0
+    0: 50
     random: 0
     random-low: 0
     random-high: 0
@@ -943,9 +945,9 @@ Pokemon Emerald: #Champion casual ish
     # You can define additional values between the minimum and maximum values.
     # Minimum value is 0
     # Maximum value is 100
-    0: 0
+    0: 50
     100: 0
-    random-range-0-10: 50
+    random-range-0-10: 0
     random: 0
     random-low: 0
     random-high: 0
@@ -970,7 +972,8 @@ Pokemon Emerald: #Champion casual ish
     # "Aqua Hideout Grunts"
     # "Seafloor Cavern Aqua Grunt"
     #
-    - Seafloor Cavern Aqua Grunt
+    #- Seafloor Cavern Aqua Grunt
+    []
 
   extra_boulders:
     # Places strength boulders on Route 115 which block access to Meteor Falls from the beach.
@@ -1041,8 +1044,8 @@ Pokemon Emerald: #Champion casual ish
 
   death_link:
     false: 0
-    true: 0
-    random: 50
+    true: 50
+    random: 0
 
   enable_wonder_trading:
     # Allows participation in wonder trading with other players in your current multiworld. Speak with the center receptionist on the second floor of any pokecenter.
@@ -1062,14 +1065,14 @@ Pokemon Emerald: #Champion casual ish
     # All secret phrases are something that could be a trendy phrase in Dewford Town. They are case insensitive.
     EMERALD SECRET: 50
     
-  plando_items:
-    - item:
-        HM02 Fly: 1
-      location: early_locations
-      from_pool: true
-      world: true
-      percentage: 100
-      force: true
+  #plando_items:
+  #  - item:
+  #      HM02 Fly: 1
+  #    location: early_locations
+  #    from_pool: true
+  #    world: true
+  #    percentage: 100
+  #    force: true
 
 triggers:
   # Triggers allow you to customize your game options by allowing you to define one or many options which only occur under specific conditions. 
@@ -1261,7 +1264,7 @@ triggers:
     # each name has a #number, for showing how many letters each name has at a quick glance
 
     option_result: Pseudoregalia
-    
+
     options:
       null:
         name: Tsukiregalia{NUMBER} #12
@@ -1276,5 +1279,5 @@ triggers:
     option_result: false
     options:
       null:
-        name: Tsukino{NUMBER} #7 
+        name: Tsukino{NUMBER} #7
           #Default name if per game name is set to off/false
