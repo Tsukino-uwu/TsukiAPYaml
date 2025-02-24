@@ -1,0 +1,152 @@
+description: Default Tsukino Template
+name: Tsukino
+
+supported_games_only: true
+async: false
+per_game_name: true
+
+
+game:
+  Pokemon Emerald: 1
+
+requires:
+  version: 0.5.1
+
+plando: items
+
+Pokemon Emerald:
+  progression_balancing: 50
+  accessibility: full
+  goal: champion
+  badges: completely_random
+  hms: completely_random
+  key_items: true
+  bikes: true
+  event_tickets: true
+  rods: true
+  overworld_items: true
+  hidden_items: false
+  npc_gifts: true
+  berry_trees: true
+  dexsanity: false
+  trainersanity: false
+  item_pool_type: shuffled
+  require_itemfinder: true
+  require_flash: both
+  elite_four_requirement: badges
+  elite_four_count: 8
+  norman_requirement: badges
+  norman_count: 4
+  legendary_hunt_catch: false
+  legendary_hunt_count: 3
+  allowed_legendary_hunt_encounters:
+    - Groudon
+    - Kyogre
+    - Rayquaza
+    - Latios
+    - Latias
+    - Regirock
+    - Registeel
+    - Regice
+    - Ho-Oh
+    - Lugia
+    - Deoxys
+    - Mew
+  wild_pokemon: completely_random
+  starters: completely_random
+  trainer_parties: completely_random
+  force_fully_evolved: 100
+  legendary_encounters: completely_random
+  misc_pokemon: completely_random
+  types: vanilla
+  abilities: follow_evolutions
+  ability_blacklist:
+    - Wonder Guard
+    - Arena Trap
+    - Shadow Tag
+    - Magnet Pull
+    - Truant
+    - Cacophony
+  level_up_moves: randomized
+  move_match_type_bias: 0
+  move_normal_type_bias: 0
+  tm_tutor_compatibility: 100
+  hm_compatibility: 100
+  tm_tutor_moves: false
+  reusable_tms_tutors: true
+  move_blacklist:
+    - Minimize
+    - Double Team
+    - Protect
+    - Substitute
+    - Detect
+    - Sand-Attack
+    - Smokescreen
+  min_catch_rate: 255
+  guaranteed_catch: true
+  normalize_encounter_rates: true
+  exp_modifier: 300
+  blind_trainers: true
+  purge_spinners: false
+  match_trainer_levels: off
+  match_trainer_levels_bonus: 0
+  double_battle_chance: 0
+  better_shops: true
+  extra_boulders: true
+  extra_bumpy_slope: true
+  modify_118: true
+  free_fly_location: true
+  hm_requirements: fly_without_badge
+  turbo_a: true
+  receive_item_messages: progression
+  remote_items: true
+  music: false
+  fanfares: false
+  death_link: true
+  enable_wonder_trading: true
+  easter_egg: EMERALD SECRET
+  start_inventory: {}
+
+triggers:
+  - option_name: supported_games_only
+    option_result: true
+    options:
+      null:
+        game:
+          Pokemon Emerald: 1
+
+  - option_name: async
+    option_result: true
+    options:
+      Pokemon Emerald:
+        dexsanity: true
+        wild_pokemon:
+          completely_random: 50
+        trainersanity: true
+        goal: steven
+        require_itemfinder:
+          true: 50
+        hidden_items:
+          true: 50
+        npc_gifts:
+          true: 50
+        berry_trees:
+          true: 50
+        guaranteed_catch:
+          true: 50
+        normalize_encounter_rates:
+          true: 50
+        remove_roadblocks: []
+        plando_items: []
+
+  - option_name: game
+    option_result: Pokemon Emerald
+    options:
+      null:
+        name: "TsukiPkmnEmrld{NUMBER}"
+
+  - option_name: per_game_name
+    option_result: false
+    options:
+      null:
+        name: "Tsukino{NUMBER}"
