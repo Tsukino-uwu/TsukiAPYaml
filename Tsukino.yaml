@@ -1,13 +1,12 @@
-description: Default Tsukino Template
 name: Tsukino
 
-supported_games_only: true
+supported_games_only: false
 async: false
 per_game_name: true
 
-
 game:
   Pokemon Emerald: 1
+  Super Metroid: 0
 
 requires:
   version: 0.5.1
@@ -107,6 +106,55 @@ Pokemon Emerald:
   easter_egg: EMERALD SECRET
   start_inventory: {}
 
+Super Metroid:
+  progression_balancing: '50'
+  accessibility: full
+  start_inventory_removes_from_pool: 'false'
+  preset: newbie
+  start_location: landing_site
+  remote_items: 'true'
+  death_link: enable_survive
+  max_difficulty: hardcore
+  morph_placement: early
+  hide_items: 'false'
+  strict_minors: 'false'
+  missile_qty: '30'
+  super_qty: '20'
+  power_bomb_qty: '10'
+  minor_qty: '100'
+  energy_qty: vanilla
+  area_randomization: 'off'
+  area_layout: 'false'
+  doors_colors_rando: 'false'
+  allow_grey_doors: 'false'
+  boss_randomization: 'false'
+  escape_rando: 'false'
+  remove_escape_enemies: 'false'
+  fun_combat: 'false'
+  fun_movement: 'false'
+  fun_suits: 'false'
+  layout_patches: 'true'
+  varia_tweaks: 'true'
+  nerfed_charge: 'false'
+  gravity_behaviour: vanilla
+  elevators_speed: 'true'
+  fast_doors: 'true'
+  spin_jump_restart: 'true'
+  rando_speed: 'true'
+  infinite_space_jump: 'true'
+  refill_before_save: 'true'
+  hud: 'true'
+  animals: 'false'
+  no_music: 'false'
+  random_music: 'true'
+  tourian: fast
+  custom_objective: 'false'
+  custom_objective_list: random
+  custom_objective_count: '4'
+  objective: kill all G4
+  relaxed_round_robin_cf: 'false'
+  start_inventory: {}
+
 triggers:
   - option_name: supported_games_only
     option_result: true
@@ -114,6 +162,8 @@ triggers:
       null:
         game:
           Pokemon Emerald: 1
+          Super Metroid: 1
+
 
   - option_name: async
     option_result: true
@@ -144,6 +194,12 @@ triggers:
     options:
       null:
         name: "TsukiPkmnEmrld{NUMBER}"
+
+  - option_name: game
+    option_result: Super Metroid
+    options:
+      null:
+        name: "TsukiMetroid{NUMBER}"
 
   - option_name: per_game_name
     option_result: false
