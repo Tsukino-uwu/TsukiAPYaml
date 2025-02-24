@@ -9,6 +9,7 @@ game:
   Pokemon Emerald: 1
   Super Metroid: 0
   A Link to the Past: 0
+  Pokemon FireRed and LeafGreen: 0
 
 requires:
   version: 0.5.1
@@ -234,6 +235,175 @@ A Link to the Past:
   misery_mire_medallion: random
   turtle_rock_medallion: random
 
+Pokemon FireRed and LeafGreen:
+  progression_balancing: 50
+  accessibility:
+    full: 50
+  game_version:
+    firered: 50
+  goal:
+    elite_four: 50
+  kanto_only:
+    'false': 50
+  random_starting_town:
+    'false': 50
+  shuffle_badges:
+    'true': 50
+  shuffle_hidden:
+    'off': 50
+  extra_key_items:
+    'false': 50
+  trainersanity:
+    none: 50
+  dexsanity:
+    none: 50
+  famesanity:
+    'false': 50
+  shuffle_fly_destination_unlocks:
+    'off': 50
+  pokemon_request_locations:
+    'false': 50
+  shuffle_running_shoes:
+    start_with: 50
+  card_key:
+    vanilla: 50
+  island_passes:
+    split: 50
+  split_teas:
+    'false': 50
+  itemfinder_required:
+    required: 50
+  flash_required:
+    required: 50
+  fame_checker_required:
+    'true': 50
+  viridian_city_roadblock:
+    vanilla: 50
+  pewter_city_roadblock:
+    brock: 50
+  modify_world_state:
+    - Remove Cerulean Roadblocks
+    - Modify Route 10
+    - Block Tower
+    - Route 12 Boulders
+    - Modify Route 12
+    - Open Silph
+    - Remove Saffron Rockets
+    - Route 23 Trees
+    - Modify Route 23
+    - Block Vermilion Sailing
+  additional_dark_caves: []
+  remove_badge_requirement:
+    - Fly
+  oaks_aide_route_2:
+    0: 50
+  oaks_aide_route_10:
+    0: 50
+  oaks_aide_route_11:
+    0: 50
+  oaks_aide_route_16:
+    0: 50
+  oaks_aide_route_15:
+    0: 50
+  viridian_gym_requirement:
+    badges: 50
+  viridian_gym_count:
+    7: 50
+  route22_gate_requirement:
+    badges: 50
+  route22_gate_count:
+    7: 50
+  route23_guard_requirement:
+    badges: 50
+  route23_guard_count:
+    7: 50
+  elite_four_requirement:
+    badges: 50
+  elite_four_count:
+    8: 50
+  elite_four_rematch_count:
+    8: 50
+  cerulean_cave_requirement:
+    badges: 50
+  cerulean_cave_count:
+    8: 50
+  level_scaling:
+    'off': 50
+  modify_trainer_levels:
+    0: 50
+  force_fully_evolved:
+    never: 50
+  wild_pokemon:
+    completely_random: 50
+  wild_pokemon_groups:
+    none: 50
+  wild_pokemon_blacklist: []
+  starters:
+    completely_random: 50
+  starter_blacklist: []
+  trainers:
+    completely_random: 50
+  trainer_blacklist: []
+  legendary_pokemon:
+    completely_random: 50
+  misc_pokemon:
+    completely_random: 50
+  types:
+    vanilla: 50
+  abilities:
+    follow_evolutions: 50
+  ability_blacklist: []
+  moves:
+    randomized: 50
+  move_blacklist: []
+  hm_compatibility:
+    full: 50
+  tm_tutor_compatibility:
+    full: 50
+  tm_tutor_moves:
+    'false': 50
+  reusable_tm_tutors:
+    'true': 50
+  min_catch_rate:
+    255: 50
+  all_pokemon_seen:
+    'true': 50
+  exp_modifier:
+    300: 50
+  starting_money:
+    3000: 50
+  better_shops:
+    'true': 50
+  free_fly_location:
+    any: 50
+  town_map_fly_location:
+    'off': 50
+  randomize_music:
+    'false': 50
+  randomize_fanfares:
+    'false': 50
+  game_options:
+    Auto Run: 'Off'
+    Battle Scene: 'Off'
+    Battle Style: Set
+    Bike Music: 'On'
+    Blind Trainers: 'On'
+    Button Mode: Help
+    Encounter Rates: Vanilla
+    Experience: Custom
+    Frame: 1
+    Guaranteed Catch: 'On'
+    Item Messages: Progression
+    Low HP Beep: 'On'
+    Show Effectiveness: 'On'
+    Skip Fanfares: 'Off'
+    Sound: Mono
+    Surf Music: 'On'
+    Text Speed: Instant
+    Turbo A: 'On'
+  provide_hints:
+    'false': 50
+
 triggers:
   - option_name: supported_games_only
     option_result: true
@@ -285,6 +455,12 @@ triggers:
     options:
       null:
         name: "TsukiALTTP{NUMBER}"
+
+  - option_name: game
+    option_result: Pokemon FireRed and LeafGreen
+    options:
+      null:
+        name: "TsukiPkmnFrlg{NUMBER}"
 
   - option_name: per_game_name
     option_result: false
