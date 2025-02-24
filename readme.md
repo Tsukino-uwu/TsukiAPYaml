@@ -1,6 +1,6 @@
 ### Multi game Yaml for https://archipelago.gg / [archipelago github](https://github.com/ArchipelagoMW/Archipelago)
-WIP.txt & oldyaml.txt contains a lot of comments explaining how weight, plando, triggers and everything else inside yamls works
-but decided to make the main yaml really simple and easy to read without any comments
+WIP.txt & oldyaml.txt contains a lot of comments explaining how weight, plando, triggers and everything else inside yamls works,
+but I decided to make the main yaml really basic and simple so its a bit easier to read/understand
 
 ### Last updated for: v0.5.1
 
