@@ -9,9 +9,6 @@ With lot of comments explaining how weight, plando, triggers and everything else
 
 ### Trigger options available:
 
- **randomize_game_selection:**
- - For randomizing what game gets selected
-
 **supported_games_only:**
  - Will select only from a list of supported games
    - If enabled this will always randomize the game selection as well
