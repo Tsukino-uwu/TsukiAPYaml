@@ -3,13 +3,13 @@
 ### Last updated for: v0.5.1
 
 RatGaming.yaml 
-- (Autopelago yaml, with some messages inspired by Vikala from gbf)
+- Autopelago yaml, with some messages inspired by Vikala from gbf
 
 Tsukino.yaml 
-- (Main yaml file, flattened and hopefully easy to read/use)
+- Main yaml file, flattened and hopefully easy to read/use
 
 oldyaml.txt
-- (Old file, contains a lot of comments explaining how weight, plando, triggers and everything else works)
+- Old file, But contains comments explaining how weight, plando, triggers and everything else in the main yaml works
 
 # Don't forget to enable plando "items" in host.yaml
 ## [Enabling Plando](https://archipelago.gg/tutorial/Archipelago/plando/en#enabling-plando)
