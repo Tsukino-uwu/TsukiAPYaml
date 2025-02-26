@@ -1,15 +1,19 @@
 description: https://github.com/Tsukino-uwu/TsukiAPYaml
 name: Tsukino
 
+progression_balancing: 50
+
 supported_games_only: false
 async: false
 per_game_name: true
 
 game:
-  Pokemon Emerald: 1
-  Super Metroid: 0
+  Pokemon Emerald: 0
+  Super Metroid Map Rando: 1
   A Link to the Past: 0
   Pokemon FireRed and LeafGreen: 0
+  Super Mario 64: 0
+  Dark Souls III: 0
 
 requires:
   version: 0.5.1
@@ -17,7 +21,6 @@ requires:
 plando: items
 
 Pokemon Emerald:
-  progression_balancing: 50
   accessibility: full
   goal: champion
   badges: completely_random
@@ -109,57 +112,98 @@ Pokemon Emerald:
   easter_egg: EMERALD SECRET
   start_inventory: {}
 
-Super Metroid:
-  progression_balancing: '50'
+Super Metroid Map Rando:
   accessibility: full
-  start_inventory_removes_from_pool: 'false'
-  preset: newbie
-  start_location: landing_site
   remote_items: 'true'
-  death_link: enable_survive
-  max_difficulty: hardcore
-  morph_placement: early
-  hide_items: 'false'
-  strict_minors: 'false'
-  missile_qty: '30'
-  super_qty: '20'
-  power_bomb_qty: '10'
-  minor_qty: '100'
-  energy_qty: vanilla
-  area_randomization: 'off'
-  area_layout: 'false'
-  doors_colors_rando: 'false'
-  allow_grey_doors: 'false'
-  boss_randomization: 'false'
-  escape_rando: 'false'
-  remove_escape_enemies: 'false'
-  fun_combat: 'false'
-  fun_movement: 'false'
-  fun_suits: 'false'
-  layout_patches: 'true'
-  varia_tweaks: 'true'
-  nerfed_charge: 'false'
-  gravity_behaviour: vanilla
-  elevators_speed: 'true'
+  death_link:
+    disable: 0
+    enable_survive: 50
+  preset:
+    basic: 50
+    medium: 0
+    hard: 0
+    veryhard: 0
+    expert: 0
+    extreme: 0
+    insane: 0
+    beyond: 0
+    custom: 0
+  techs: []
+  strats: []
+  item_pool: full
+  custom_item_pool: Missile
+  shinespark_tiles: 26
+  heated_shinespark_tiles: 29
+  shinecharge_leniency_frames: 90
+  resource_multiplier: 100
+  gate_glitch_leniency: 14
+  door_stuck_leniency: 2
+  escape_timer_multiplier: 300
+  start_location_mode: randomroom
+  phantoon_proficiency: 50
+  draygon_proficiency: 25
+  ridley_proficiency: 10
+  botwoon_proficiency: 50
+  mother_brain_proficiency: 50
+  save_animals: maybe
+  early_save: 'true'
+  ultra_low_qol: 'false'
+  quality_of_life: max
+  objectives: bosses
+  doors_mode: ammo
+  area_assignment: randomized
+  supers_double: 'true'
+  mother_brain: short
+  escape_enemies_cleared: 'true'
+  escape_refill: 'true'
+  escape_movement_items: 'true'
+  mark_map_stations: 'true'
+  room_outline_revealed: 'true'
+  transition_letters: 'true'
+  item_markers: 3tiered
+  item_dots_disappear: 'true'
+  all_items_spawn: 'true'
+  buffed_drops: 'true'
+  acid_chozo: 'true'
+  fast_elevators: 'true'
   fast_doors: 'true'
-  spin_jump_restart: 'true'
-  rando_speed: 'true'
+  fast_pause_menu: 'true'
+  respin: 'true'
   infinite_space_jump: 'true'
-  refill_before_save: 'true'
-  hud: 'true'
-  animals: 'false'
-  no_music: 'false'
-  random_music: 'true'
-  tourian: fast
-  custom_objective: 'false'
-  custom_objective_list: random
-  custom_objective_count: '4'
-  objective: kill all G4
-  relaxed_round_robin_cf: 'false'
-  start_inventory: {}
+  momentum_conservation: 'true'
+  wall_jump: collectible
+  etank_refill: full
+  maps_revealed: hidden
+  map_layout:
+    tame: 50
+    wild: 0
+  energy_free_shinesparks: 'false'
+  etank_color_red: 222
+  etank_color_green: 56
+  etank_color_blue: 148
+  reserve_hud_style: revamped
+  vanilla_screw_attack_animation: vanilla
+  palette_theme:
+    vanilla: 50
+    areathemed: 0
+  tile_theme:
+    none: 50
+    scrambled: 0
+  music: areathemed
+  disable_beeping: vanilla
+  shaking: vanilla
+  shot: x
+  jump: a
+  dash: b
+  item_select: y
+  item_cancel: select
+  angle_up: r
+  angle_down: l
+  spin_lock_buttons: ['L', 'Up', 'X', 'R']
+  quick_reload_buttons: ['L', 'Select', 'Start', 'R']
+  moonwalk: 'false'
 
 A Link to the Past:
-  progression_balancing: '50'
   accessibility: items
   goal: ganon
   mode: open
@@ -236,51 +280,28 @@ A Link to the Past:
   turtle_rock_medallion: random
 
 Pokemon FireRed and LeafGreen:
-  progression_balancing: 50
-  accessibility:
-    full: 50
-  game_version:
-    firered: 50
-  goal:
-    elite_four: 50
-  kanto_only:
-    'false': 50
-  random_starting_town:
-    'false': 50
-  shuffle_badges:
-    'true': 50
-  shuffle_hidden:
-    'off': 50
-  extra_key_items:
-    'false': 50
-  trainersanity:
-    none: 50
-  dexsanity:
-    none: 50
-  famesanity:
-    'false': 50
-  shuffle_fly_destination_unlocks:
-    'off': 50
-  pokemon_request_locations:
-    'false': 50
-  shuffle_running_shoes:
-    start_with: 50
-  card_key:
-    vanilla: 50
-  island_passes:
-    split: 50
-  split_teas:
-    'false': 50
-  itemfinder_required:
-    required: 50
-  flash_required:
-    required: 50
-  fame_checker_required:
-    'true': 50
-  viridian_city_roadblock:
-    vanilla: 50
-  pewter_city_roadblock:
-    brock: 50
+  accessibility: full
+  game_version: firered
+  goal: elite_four
+  kanto_only: 'false'
+  random_starting_town: 'false'
+  shuffle_badges: 'true'
+  shuffle_hidden: 'off'
+  extra_key_items: 'false'
+  trainersanity: none
+  dexsanity: none
+  famesanity: 'false'
+  shuffle_fly_destination_unlocks: 'off'
+  pokemon_request_locations: 'false'
+  shuffle_running_shoes: start_with
+  card_key: vanilla
+  island_passes: split
+  split_teas: 'false'
+  itemfinder_required: required
+  flash_required: required
+  fame_checker_required: 'true'
+  viridian_city_roadblock: vanilla
+  pewter_city_roadblock: brock
   modify_world_state:
     - Remove Cerulean Roadblocks
     - Modify Route 10
@@ -295,93 +316,58 @@ Pokemon FireRed and LeafGreen:
   additional_dark_caves: []
   remove_badge_requirement:
     - Fly
-  oaks_aide_route_2:
-    0: 50
-  oaks_aide_route_10:
-    0: 50
-  oaks_aide_route_11:
-    0: 50
-  oaks_aide_route_16:
-    0: 50
-  oaks_aide_route_15:
-    0: 50
-  viridian_gym_requirement:
-    badges: 50
-  viridian_gym_count:
-    7: 50
-  route22_gate_requirement:
-    badges: 50
-  route22_gate_count:
-    7: 50
-  route23_guard_requirement:
-    badges: 50
-  route23_guard_count:
-    7: 50
-  elite_four_requirement:
-    badges: 50
-  elite_four_count:
-    8: 50
-  elite_four_rematch_count:
-    8: 50
-  cerulean_cave_requirement:
-    badges: 50
-  cerulean_cave_count:
-    8: 50
-  level_scaling:
-    'off': 50
-  modify_trainer_levels:
-    0: 50
-  force_fully_evolved:
-    never: 50
-  wild_pokemon:
-    completely_random: 50
-  wild_pokemon_groups:
-    none: 50
+  oaks_aide_route_2: 0
+  oaks_aide_route_10: 0
+  oaks_aide_route_11: 0
+  oaks_aide_route_16: 0
+  oaks_aide_route_15: 0
+  viridian_gym_requirement: badges
+  viridian_gym_count: 7
+  route22_gate_requirement: badges
+  route22_gate_count: 7
+  route23_guard_requirement: badges
+  route23_guard_count: 7
+  elite_four_requirement: badges
+  elite_four_count: 8
+  elite_four_rematch_count: 8
+  cerulean_cave_requirement: badges
+  cerulean_cave_count: 8
+  level_scaling: 'off'
+  modify_trainer_levels: 0
+  force_fully_evolved: never
+  wild_pokemon: completely_random
+  wild_pokemon_groups: none
   wild_pokemon_blacklist: []
-  starters:
-    completely_random: 50
+  starters: completely_random
   starter_blacklist: []
-  trainers:
-    completely_random: 50
+  trainers: completely_random
   trainer_blacklist: []
-  legendary_pokemon:
-    completely_random: 50
-  misc_pokemon:
-    completely_random: 50
-  types:
-    vanilla: 50
-  abilities:
-    follow_evolutions: 50
-  ability_blacklist: []
-  moves:
-    randomized: 50
+  legendary_pokemon: completely_random
+  misc_pokemon: completely_random
+  types: vanilla
+  abilities: follow_evolutions
+  ability_blacklist:
+    - Wonder Guard
+    - Arena Trap
+    - Truant
+    - Shadow Tag
+    - Plus
+    - Minus
+  moves: randomized
   move_blacklist: []
-  hm_compatibility:
-    full: 50
-  tm_tutor_compatibility:
-    full: 50
-  tm_tutor_moves:
-    'false': 50
-  reusable_tm_tutors:
-    'true': 50
-  min_catch_rate:
-    255: 50
-  all_pokemon_seen:
-    'true': 50
-  exp_modifier:
-    300: 50
-  starting_money:
-    3000: 50
-  better_shops:
-    'true': 50
-  free_fly_location:
-    any: 50
-  town_map_fly_location:
-    'off': 50
-  randomize_music:
-    'false': 50
-  randomize_fanfares:
-    'false': 50
+  hm_compatibility: full
+  tm_tutor_compatibility: full
+  tm_tutor_moves: 'false'
+  reusable_tm_tutors: 'true'
+  min_catch_rate: 255
+  all_pokemon_seen: 'true'
+  exp_modifier: 300
+  starting_money: 3000
+  better_shops: 'true'
+  free_fly_location: any
+  town_map_fly_location: 'off'
+  randomize_music: 'false'
+  randomize_fanfares: 'false'
   game_options:
     Auto Run: 'Off'
     Battle Scene: 'Off'
@@ -401,8 +387,83 @@ Pokemon FireRed and LeafGreen:
     Surf Music: 'On'
     Text Speed: Instant
     Turbo A: 'On'
-  provide_hints:
-    'false': 50
+  provide_hints: 'false'
+
+Super Mario 64:
+  accessibility: full
+  area_rando: 'off'
+  buddy_checks: 'true'
+  exclamation_boxes: 'true'
+  progressive_keys: 'false'
+  enable_coin_stars: 'true'
+  enable_move_rando: 'true'
+  move_rando_actions:
+    - Triple Jump
+    - Long Jump
+    - Backflip
+    - Side Flip
+    - Wall Kick
+    - Dive
+    - Ground Pound
+    - Kick
+    - Climb
+    - Ledge Grab
+  strict_cap_requirements: 'true'
+  strict_cannon_requirements: 'true'
+  strict_move_requirements: 'true'
+  amount_of_stars: 120
+  first_bowser_star_door_cost: 7
+  basement_star_door_cost: 25
+  second_floor_star_door_cost: 42
+  mips1_cost: 12
+  mips2_cost: 42
+  stars_to_finish: 58
+  death_link: 'true'
+  completion_type: last_bowser_stage
+
+Dark Souls III:
+  accessibility: full
+  early_banner: early_global
+  late_basin_of_vows: after_small_lothric_banner
+  late_dlc: 'off'
+  death_link: 'true'
+  enable_dlc: 'true'
+  enable_ngp: 'true'
+  random_starting_loadout: 'true'
+  require_one_handed_starting_weapons: 'true'
+  auto_equip: 'true'
+  lock_equip: 'false'
+  no_equip_load: 'true'
+  no_weapon_requirements: 'true'
+  no_spell_requirements: 'true'
+  randomize_infusion: 'true'
+  randomize_infusion_percentage: '2'
+  randomize_weapon_level: all
+  randomize_weapon_level_percentage: '33'
+  max_levels_in_5: '5'
+  max_levels_in_10: '10'
+  smooth_soul_items: 'true'
+  smooth_upgrade_items: 'true'
+  smooth_upgraded_weapons: 'true'
+  randomize_enemies: 'false'
+  simple_early_bosses: 'true'
+  scale_enemies: 'true'
+  randomize_mimics_with_enemies: 'false'
+  randomize_small_crystal_lizards_with_enemies: 'false'
+  reduce_harmless_enemies: 'false'
+  all_chests_are_mimics: 'false'
+  impatient_mimics: 'false'
+  exclude_locations:
+  - Hidden
+  - Miscellaneous
+  - Small Crystal Lizards
+  - Small Souls
+  - Upgrade
+  excluded_location_behavior: forbid_useful
+  missable_location_behavior: forbid_useful
+  start_inventory: {}
+  min_levels_in_5: random
+  min_levels_in_10: random
 
 triggers:
   - option_name: supported_games_only
@@ -411,8 +472,9 @@ triggers:
       null:
         game:
           Pokemon Emerald: 1
-          Super Metroid: 1
           A Link to the Past: 1
+          Super Mario 64: 1
+          Dark Souls III: 1
 
   - option_name: async
     option_result: true
@@ -445,7 +507,7 @@ triggers:
         name: "TsukiPkmnEmrld{NUMBER}"
 
   - option_name: game
-    option_result: Super Metroid
+    option_result: Super Metroid Map Rando
     options:
       null:
         name: "TsukiMetroid{NUMBER}"
@@ -461,6 +523,18 @@ triggers:
     options:
       null:
         name: "TsukiPkmnFrlg{NUMBER}"
+
+  - option_name: game
+    option_result: Super Mario 64
+    options:
+      null:
+        name: "TsukiSM64{NUMBER}"
+
+  - option_name: game
+    option_result: Dark Souls III
+    options:
+      null:
+        name: "TsukiDS3{NUMBER}"
 
   - option_name: per_game_name
     option_result: false
