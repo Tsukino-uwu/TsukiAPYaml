@@ -25,24 +25,24 @@ Pokemon Emerald:
   goal: champion
   badges: completely_random
   hms: completely_random
-  key_items: true
-  bikes: true
-  event_tickets: true
-  rods: true
-  overworld_items: true
-  hidden_items: false
-  npc_gifts: true
-  berry_trees: true
-  dexsanity: false
-  trainersanity: false
+  key_items: 'true'
+  bikes: 'true'
+  event_tickets: 'true'
+  rods: 'true'
+  overworld_items: 'true'
+  hidden_items: 'false'
+  npc_gifts: 'true'
+  berry_trees: 'true'
+  dexsanity: 'false'
+  trainersanity: 'false'
   item_pool_type: shuffled
-  require_itemfinder: true
+  require_itemfinder: 'true'
   require_flash: both
   elite_four_requirement: badges
   elite_four_count: 8
   norman_requirement: badges
   norman_count: 4
-  legendary_hunt_catch: false
+  legendary_hunt_catch: 'false'
   legendary_hunt_count: 3
   allowed_legendary_hunt_encounters:
     - Groudon
@@ -77,8 +77,8 @@ Pokemon Emerald:
   move_normal_type_bias: 0
   tm_tutor_compatibility: 100
   hm_compatibility: 100
-  tm_tutor_moves: false
-  reusable_tms_tutors: true
+  tm_tutor_moves: 'false'
+  reusable_tms_tutors: 'true'
   move_blacklist:
     - Minimize
     - Double Team
@@ -88,27 +88,27 @@ Pokemon Emerald:
     - Sand-Attack
     - Smokescreen
   min_catch_rate: 255
-  guaranteed_catch: true
-  normalize_encounter_rates: true
+  guaranteed_catch: 'true'
+  normalize_encounter_rates: 'true'
   exp_modifier: 300
-  blind_trainers: true
-  purge_spinners: false
-  match_trainer_levels: off
+  blind_trainers: 'true'
+  purge_spinners: 'false'
+  match_trainer_levels: 'off'
   match_trainer_levels_bonus: 0
   double_battle_chance: 0
-  better_shops: true
-  extra_boulders: true
-  extra_bumpy_slope: true
-  modify_118: true
-  free_fly_location: true
+  better_shops: 'true'
+  extra_boulders: 'true'
+  extra_bumpy_slope: 'true'
+  modify_118: 'true'
+  free_fly_location: 'true'
   hm_requirements: fly_without_badge
-  turbo_a: true
+  turbo_a: 'true'
   receive_item_messages: progression
-  remote_items: true
-  music: false
-  fanfares: false
-  death_link: true
-  enable_wonder_trading: true
+  remote_items: 'true'
+  music: 'false'
+  fanfares: 'false'
+  death_link: 'true'
+  enable_wonder_trading: 'true'
   easter_egg: EMERALD SECRET
   start_inventory: {}
 
@@ -212,13 +212,13 @@ A Link to the Past:
   glitches_required: no_glitches
   dark_room_logic: lamp
   open_pyramid: goal
-  crystals_needed_for_gt: '7'
-  crystals_needed_for_ganon: '7'
+  crystals_needed_for_gt: 7
+  crystals_needed_for_ganon: 7
   triforce_pieces_mode: available
-  triforce_pieces_percentage: '150'
-  triforce_pieces_required: '20'
-  triforce_pieces_available: '30'
-  triforce_pieces_extra: '10'
+  triforce_pieces_percentage: 150
+  triforce_pieces_required: 20
+  triforce_pieces_available: 30
+  triforce_pieces_extra: 10
   entrance_shuffle: vanilla
   entrance_shuffle_seed: random
   big_key_shuffle: original_dungeon
@@ -243,25 +243,25 @@ A Link to the Past:
   enemy_shuffle: 'false'
   killable_thieves: 'true'
   bush_shuffle: 'false'
-  shop_item_slots: '0'
+  shop_item_slots: 0
   randomize_shop_inventories: default
   shuffle_shop_inventories: 'false'
   include_witch_hut: 'false'
   randomize_shop_prices: 'false'
   randomize_cost_types: 'false'
-  shop_price_modifier: '100'
+  shop_price_modifier: 100
   shuffle_capacity_upgrades: 'on'
   bombless_start: 'false'
   shuffle_prizes: general
   tile_shuffle: 'false'
   glitch_boots: 'true'
-  beemizer_total_chance: '0'
-  beemizer_trap_chance: '60'
+  beemizer_total_chance: 0
+  beemizer_trap_chance: 60
   timer: none
-  countdown_start_time: '10'
-  red_clock_time: '-2'
-  blue_clock_time: '2'
-  green_clock_time: '4'
+  countdown_start_time: 10
+  red_clock_time: -2
+  blue_clock_time: 2
+  green_clock_time: 4
   death_link: 'true'
   allow_collect: 'true'
   ow_palettes: default
@@ -439,11 +439,11 @@ Dark Souls III:
   no_weapon_requirements: 'true'
   no_spell_requirements: 'true'
   randomize_infusion: 'true'
-  randomize_infusion_percentage: '2'
+  randomize_infusion_percentage: 2
   randomize_weapon_level: all
-  randomize_weapon_level_percentage: '33'
-  max_levels_in_5: '5'
-  max_levels_in_10: '10'
+  randomize_weapon_level_percentage: 33
+  max_levels_in_5: 5
+  max_levels_in_10: 10
   smooth_soul_items: 'true'
   smooth_upgrade_items: 'true'
   smooth_upgraded_weapons: 'true'
@@ -469,7 +469,7 @@ Dark Souls III:
 
 triggers:
   - option_name: supported_games_only
-    option_result: true
+    option_result: 'true'
     options:
       null:
         game:
@@ -479,26 +479,19 @@ triggers:
           Dark Souls III: 1
 
   - option_name: async
-    option_result: true
+    option_result: 'true'
     options:
       Pokemon Emerald:
-        dexsanity: true
-        wild_pokemon:
-          completely_random: 50
-        trainersanity: true
+        dexsanity: 'true'
+        wild_pokemon: completely_random
+        trainersanity: 'true'
         goal: steven
-        require_itemfinder:
-          true: 50
-        hidden_items:
-          true: 50
-        npc_gifts:
-          true: 50
-        berry_trees:
-          true: 50
-        guaranteed_catch:
-          true: 50
-        normalize_encounter_rates:
-          true: 50
+        require_itemfinder: 'true'
+        hidden_items: 'true'
+        npc_gifts: 'true'
+        berry_trees: 'true'
+        guaranteed_catch: 'true'
+        normalize_encounter_rates: 'true'
         remove_roadblocks: []
         plando_items: []
 
@@ -539,7 +532,7 @@ triggers:
         name: "TsukiDS3{NUMBER}"
 
   - option_name: per_game_name
-    option_result: false
+    option_result: 'false'
     options:
       null:
         name: "Tsukino{NUMBER}"
