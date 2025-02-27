@@ -113,8 +113,9 @@ Pokemon Emerald:
   start_inventory: {}
 
 Super Metroid Map Rando:
+  progression_balancing: 99
   accessibility: full
-  remote_items: 'true'
+  remote_items: 'false'
   death_link:
     disable: 0
     enable_survive: 50
@@ -131,13 +132,18 @@ Super Metroid Map Rando:
   techs: []
   strats: []
   item_pool: full
-  custom_item_pool: Missile
-  shinespark_tiles: 26
-  heated_shinespark_tiles: 29
-  shinecharge_leniency_frames: 90
+  custom_item_pool:
+    ETank: 14
+    Missile: 46
+    PowerBomb: 10
+    ReserveTank: 4
+    Super: 10
+  shinespark_tiles: 33
+  heated_shinespark_tiles: 33
+  shinecharge_leniency_frames: 120
   resource_multiplier: 100
-  gate_glitch_leniency: 14
-  door_stuck_leniency: 2
+  gate_glitch_leniency: 100
+  door_stuck_leniency: 100
   escape_timer_multiplier: 300
   start_location_mode: randomroom
   phantoon_proficiency: 50
@@ -160,7 +166,7 @@ Super Metroid Map Rando:
   mark_map_stations: 'true'
   room_outline_revealed: 'true'
   transition_letters: 'true'
-  item_markers: 3tiered
+  item_markers: majors
   item_dots_disappear: 'true'
   all_items_spawn: 'true'
   buffed_drops: 'true'
@@ -171,7 +177,7 @@ Super Metroid Map Rando:
   respin: 'true'
   infinite_space_jump: 'true'
   momentum_conservation: 'true'
-  wall_jump: collectible
+  wall_jump: vanilla
   etank_refill: full
   maps_revealed: hidden
   map_layout:
@@ -183,12 +189,8 @@ Super Metroid Map Rando:
   etank_color_blue: 148
   reserve_hud_style: revamped
   vanilla_screw_attack_animation: vanilla
-  palette_theme:
-    vanilla: 50
-    areathemed: 0
-  tile_theme:
-    none: 50
-    scrambled: 0
+  palette_theme: vanilla
+  tile_theme: none
   music: areathemed
   disable_beeping: vanilla
   shaking: vanilla
